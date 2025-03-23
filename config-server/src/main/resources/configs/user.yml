@@ -2,8 +2,11 @@ spring:
   data:
     mongodb:
 #      uri: mongodb+srv://omar:FcybyLAxvwU6nsxT@cluster0.kp2s5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      uri: mongodb://localhost:27017
+#      uri: mongodb://localhost:27017
       database: users_wd
+      port: 27018
+      username: omar
+      password: omar
   mail:
     host: smtp.gmail.com
     port: 587
