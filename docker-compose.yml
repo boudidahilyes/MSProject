@@ -1,10 +1,24 @@
 
 services:
+
   mongo:
     image: mongo
     container_name: mongo
-    ports:
-      - "27018:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: omar
       MONGO_INITDB_ROOT_PASSWORD: omar
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+volumes:
+    mongo_data:
+

@@ -1,0 +1,6 @@
+package esprit.wd.user.model;
+
+public enum KafkaEventType {
+    LOGIN,LOGOUT,REGISTER,UNREGISTER,
+    FAILED_LOGIN,FAILED_LOGOUT,FAILED_REGISTER,FAILED_UNREGISTER
+}

@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/discovery/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/password/pom.xml" />
+        <option value="$PROJECT_DIR$/tacking-system/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,26 @@
+spring:
+  data:
+    mongodb:
+      #      uri: mongodb+srv://omar:FcybyLAxvwU6nsxT@cluster0.kp2s5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      #      uri: mongodb://localhost:27017
+      username: omar
+      password: omar
+      host: localhost
+      port: 27018
+      database: user_tracking
+      authentication-database: admin
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: distributed_web
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+server:
+  port: 9003
+
+
+
+

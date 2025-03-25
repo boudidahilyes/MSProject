@@ -1,9 +1,12 @@
 package esprit.wd.user.service;
 
 
+import esprit.wd.user.dto.FailedEventData;
+import esprit.wd.user.dto.FailedType;
 import esprit.wd.user.exception.TokenExpiredException;
 import esprit.wd.user.exception.UserNameAlreadyExists;
 import esprit.wd.user.exception.UserNotFoundException;
+import esprit.wd.user.model.KafkaEventType;
 import esprit.wd.user.request.AuthenticationRequest;
 import esprit.wd.user.request.RefreshTokenRequest;
 import esprit.wd.user.request.RegisterRequest;
@@ -17,6 +20,7 @@ import esprit.wd.user.repository.UserRepository;
 
 import io.jsonwebtoken.Claims;
 import lombok.RequiredArgsConstructor;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -40,6 +44,7 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final KafkaProducer kafkaProducer;
 
 
     public RefreshResponse register(RegisterRequest request) {
@@ -56,12 +61,14 @@ public class AuthenticationService {
                 .build();
         userRepository.save(user2save);
         var tokes = generateTokens(user2save);
+        kafkaProducer.deliverSuccessMessage(user2save, KafkaEventType.REGISTER);
         return new RefreshResponse(tokes.get(0), tokes.get(1));
 
     }
 
 
     public AuthenticationResponse login(AuthenticationRequest request) {
+        System.out.println("login");
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
@@ -69,16 +76,34 @@ public class AuthenticationService {
                             request.password()
                     )
             );
-        } catch (BadCredentialsException ex) {
+        } catch (Exception ex) {
+            System.out.println("here ");
+            kafkaProducer.deliverFailedMessage(
+                    generateFailedEvent(request.email(),
+                            "Invalid email or password",
+                            KafkaEventType.FAILED_LOGIN)
+            );
             throw new UserNotFoundException("Invalid email or password");
         }
 
+
         var user = userRepository
                 .findByEmail(request.email())
-                .orElseThrow(() -> new UserNotFoundException("User not found"));
+                .orElse(null);
+
+        if (user == null) {
+            System.out.println("oamr");
+            kafkaProducer.deliverFailedMessage(
+                    generateFailedEvent(request.email(),
+                            "User not found",
+                            KafkaEventType.FAILED_LOGIN)
+            );
+            throw new UserNotFoundException("User not found");
+        }
 
         tokenBlackListService.removeUserTokens(user.getUserId());
         var tokes = generateTokens(user);
+        kafkaProducer.deliverSuccessMessage(user, KafkaEventType.LOGIN);
         return new AuthenticationResponse(
                 tokes.get(0),
                 tokes.get(1),
@@ -127,6 +152,16 @@ public class AuthenticationService {
         HashMap<String, Object> claimsMap = new HashMap<>();
         claimsMap.put("roles", roles);
         return claimsMap;
+    }
+
+    private FailedEventData generateFailedEvent(String email, String error, KafkaEventType eventType) {
+        return FailedEventData.builder()
+                .metadata(List.of(
+                        new FailedType("email", email),
+                        new FailedType("error", error),
+                        new FailedType("eventType", eventType.name())
+                ))
+                .build();
     }
 
 

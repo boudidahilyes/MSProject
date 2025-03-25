@@ -30,6 +30,15 @@
         <module name="user" />
         <module name="gateway" />
       </profile>
+      <profile name="Annotation profile for tacking-system" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="tacking-system" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -46,6 +55,7 @@
       <module name="discovery" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="password" options="-parameters" />
+      <module name="tacking-system" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>
