@@ -4,3 +4,6 @@ spring:
     import: optional:configserver:http://localhost:8081
   application:
     name: Order
+stripe:
+  public-key: ${public_key}
+  secret-key: ${secret_key}
