@@ -24,6 +24,15 @@
         <module name="EurekaServer" />
         <module name="ConfigServer" />
       </profile>
+      <profile name="Annotation profile for Gateway" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Gateway" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -31,6 +40,7 @@
       <module name="Cart" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
       <module name="EurekaServer" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
       <module name="Order" options="-parameters" />
       <module name="Product" options="-parameters" />
       <module name="Review" options="-parameters" />
