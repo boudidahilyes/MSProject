@@ -7,6 +7,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -23,5 +24,5 @@ public class Cart {
     private Long productId;
     private int quantity;
     @CreatedDate
-    private LocalDate added_at;
+    private LocalDateTime added_at;
 }
