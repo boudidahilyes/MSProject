@@ -15,7 +15,7 @@ import java.util.Map;
 @Data
 @Builder
 @Document(collection = "failed_conn")
-public class FailedEventData {
+public class FailureEventData {
 
     @Id
     private String eventId;

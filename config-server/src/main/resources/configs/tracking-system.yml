@@ -18,8 +18,17 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
         spring.json.trusted.packages: '*'
+  main:
+    allow-bean-definition-overriding: true
 server:
   port: 9003
+
+
+
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
 
 
 

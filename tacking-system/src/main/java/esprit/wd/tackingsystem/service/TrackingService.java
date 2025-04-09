@@ -2,9 +2,9 @@ package esprit.wd.tackingsystem.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 //import com.shared.sharedlibrary.model.UserEvent;
-import esprit.wd.tackingsystem.model.FailedEventData;
+import esprit.wd.tackingsystem.model.FailureEventData;
 import esprit.wd.tackingsystem.model.SuccessEventData;
-import esprit.wd.tackingsystem.repository.FailedEventDataRepository;
+import esprit.wd.tackingsystem.repository.FailureEventDataRepository;
 import esprit.wd.tackingsystem.repository.SuccessEventDataRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 public class TrackingService {
 
     private final SuccessEventDataRepository successEventDataRepository;
-    private final FailedEventDataRepository failedEventDataRepository;
+    private final FailureEventDataRepository failureEventDataRepository;
 
 
     @KafkaListener(topics = "user_success_on_conn", groupId = "distributed_web")
@@ -32,10 +32,10 @@ public class TrackingService {
 
     @KafkaListener(topics = "user_failed_on_conn", groupId = "distributed_web")
     public void consumeMsgOnFailure(Message<?> message) {
-        var data = getJson((String) message.getPayload(), FailedEventData.class);
+        var data = getJson((String) message.getPayload(), FailureEventData.class);
         System.out.println(data);
         assert data != null;
-        failedEventDataRepository.save(data);
+        failureEventDataRepository.save(data);
     }
 
     private <T> T getJson(String payload, Class<T> tClass) {
