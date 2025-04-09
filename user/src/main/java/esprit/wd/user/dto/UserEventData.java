@@ -9,8 +9,8 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEvent implements Serializable {
+public class UserEventData implements Serializable {
     private String eventType;
-    private String userId;
+    private String email;
     private Map<String, Object> metadata;
 }

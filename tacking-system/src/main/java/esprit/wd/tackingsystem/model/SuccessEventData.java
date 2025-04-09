@@ -15,7 +15,7 @@ import java.util.Map;
 @Data
 @Builder
 @Document(collection = "successful_conn")
-public class UserEvent {
+public class SuccessEventData {
 
     @Id
     private String eventId;
@@ -24,7 +24,7 @@ public class UserEvent {
 
     private Instant timestamp = Instant.now();
 
-    private String userId;
+    private String email;
 
     private Map<String, Object> metadata;
 }

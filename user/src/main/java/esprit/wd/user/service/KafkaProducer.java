@@ -1,9 +1,7 @@
 package esprit.wd.user.service;
 
-import esprit.wd.user.dto.FailedEventData;
-import esprit.wd.user.dto.UserEvent;
+import esprit.wd.user.dto.UserEventData;
 import esprit.wd.user.model.KafkaEventType;
-import esprit.wd.user.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -11,33 +9,36 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+
 @Service
 @RequiredArgsConstructor
 public class KafkaProducer {
 
-    private final KafkaTemplate<String, UserEvent> kafkaTemplate;
+    private final KafkaTemplate<String, UserEventData> kafkaTemplate;
 
-    public void deliverSuccessMessage(User user, KafkaEventType eventType) {
-        var userEvent = new UserEvent(eventType.name(), user.getUserId(), null);
+    public void deliverSuccessMessage(String email, KafkaEventType eventType) {
+        var userEvent = new UserEventData(eventType.name(), email, null);
 
-        Message<UserEvent> message = MessageBuilder
+        Message<UserEventData> message = MessageBuilder
                 .withPayload(userEvent)
                 .setHeader(KafkaHeaders.TOPIC, "user_success_on_conn")
                 .build();
 
-        System.out.println("message: " + message);
-
         kafkaTemplate.send(message);
     }
 
-    public void deliverFailedMessage(FailedEventData data) {
+    public void deliverFailedMessage(String email, String error, KafkaEventType eventType) {
 
-        Message<FailedEventData> message = MessageBuilder
-                .withPayload(data)
+        var userFailedData = new UserEventData(eventType.name(), email, null);
+
+        userFailedData.setMetadata(new HashMap<>() {{
+            put("error", error);
+        }});
+        Message<UserEventData> message = MessageBuilder
+                .withPayload(userFailedData)
                 .setHeader(KafkaHeaders.TOPIC, "user_failed_on_conn")
                 .build();
-
-        System.out.println("message: " + message);
 
         kafkaTemplate.send(message);
     }
