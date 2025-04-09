@@ -1,7 +1,7 @@
 package esprit.wd.tackingsystem.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.shared.sharedlibrary.model.UserEvent;
 import esprit.wd.tackingsystem.model.FailedEventData;
 import esprit.wd.tackingsystem.model.UserEvent;
 import esprit.wd.tackingsystem.repository.UserEventRepository;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class TrackingService {
 
-    private final UserEventRepository userEventRepository;
+    private final UserEventRepository successfulConnRepository;
 
 
     @KafkaListener(topics = "user_success_on_conn", groupId = "distributed_web")
@@ -25,7 +25,12 @@ public class TrackingService {
         System.out.println(message);
         var data = getJson((String) message.getPayload(), UserEvent.class);
         System.out.println(data);
-        userEventRepository.save(data);
+//        SuccessfulConn successfulConn = new SuccessfulConn();
+//        assert data != null;
+//        successfulConn.setMetadata(data.getMetadata());
+//        successfulConn.setUserId(data.getUserId());
+//        successfulConn.setEventType(data.getEventType());
+        successfulConnRepository.save(data);
     }
 
     @KafkaListener(topics = "user_failed_on_conn", groupId = "distributed_web")

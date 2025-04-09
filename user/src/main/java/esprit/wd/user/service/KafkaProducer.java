@@ -1,9 +1,9 @@
 package esprit.wd.user.service;
 
 import esprit.wd.user.dto.FailedEventData;
+import esprit.wd.user.dto.UserEvent;
 import esprit.wd.user.model.KafkaEventType;
 import esprit.wd.user.model.User;
-import esprit.wd.user.model.UserEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
