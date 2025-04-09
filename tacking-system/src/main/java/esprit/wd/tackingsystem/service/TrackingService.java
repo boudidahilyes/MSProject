@@ -22,6 +22,7 @@ public class TrackingService {
 
     @KafkaListener(topics = "user_success_on_conn", groupId = "distributed_web")
     public void consumeMsg(Message<?> message) {
+        System.out.println(message);
         var data = getJson((String) message.getPayload(), UserEvent.class);
         System.out.println(data);
         userEventRepository.save(data);

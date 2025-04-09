@@ -62,7 +62,7 @@ public class JitAuthenticationFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("application/json");
-            response.getWriter().write("{\"token\": \"JWT Token has expired\"}");
+            response.getWriter().write("{\"token\": \"JWT Token has expired user\"}");
         }
     }
 }

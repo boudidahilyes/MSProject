@@ -1,6 +1,7 @@
 package esprit.wd.user.service;
 
 
+import esprit.wd.user.dto.UserRequest;
 import esprit.wd.user.exception.DataMismatchException;
 import esprit.wd.user.response.UserResponse;
 import esprit.wd.user.model.User;
@@ -11,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -20,31 +23,35 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
 
-    public UserResponse getUserByMail(String request) {
+    public String getUserByMail(String request) {
         var user = userRepository.findByEmail(request).orElse(null);
-        if (user == null)
-            return null;
-
-        return UserResponse.builder()
-                .userId(user.getUserId())
-                .password(user.getPassword())
-                .email(user.getEmail())
-                .build();
+        assert user != null;
+        return user.getUserId();
     }
 
-    public UserResponse getUserByUserId(String request) {
-        var user = userRepository.findById(request).orElse(null);
-        if (user == null)
-            return null;
-
-        return UserResponse.builder()
-                .userId(user.getUserId())
-                .password(user.getPassword())
-                .email(user.getEmail())
-                .build();
+    public User getUserByUserId(String request) {
+        return userRepository.findById(request).orElse(null);
     }
 
-    public void updateUserPassword(User user) {
+    public List<UserResponse> getUsers() {
+        var users = userRepository.findAll();
+
+        if (users == null)
+            return null;
+
+        return users.stream().<UserResponse>map((u) ->
+                UserResponse.builder()
+                        .userId(u.getUserId())
+                        .password(u.getPassword())
+                        .email(u.getEmail())
+                        .build()
+        ).toList();
+    }
+
+    public void updateUserPassword(UserRequest request) {
+        var user = getUserByUserId(request.userId());
+        System.out.println("user: " + user);
+        user.setPassword(passwordEncoder.encode(request.password()));
         userRepository.save(user);
     }
 

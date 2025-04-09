@@ -26,7 +26,7 @@ public class JwtAuthenticationFilter implements WebFilter {
 
     private final JwtService jwtService;
     private final AntPathMatcher pathMatcher = new AntPathMatcher();
-    private final List<String> excludedPaths = List.of("/api/v1/auth/**", "/api/v1/password/**");
+    private final List<String> excludedPaths = List.of("/api/v1/users/**","/api/v1/auth/**", "/api/v1/password/**");
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
@@ -40,13 +40,13 @@ public class JwtAuthenticationFilter implements WebFilter {
         try {
             String token = extractToken(exchange.getRequest().getHeaders().getFirst("Authorization"));
             if (!jwtService.isTokenValid(token)) {
-                throw new ExpiredJwtException(null, null, "JWT Token has expired");
+                throw new ExpiredJwtException(null, null, "JWT Token has expired gateway");
             }
 
             return chain.filter(exchange);
         } catch (TokenMissingException | ExpiredJwtException e) {
             log.error("Authentication error: {}", e.getMessage());
-            return handleUnauthorizedResponse(exchange, "JWT Token is invalid or expired.");
+            return handleUnauthorizedResponse(exchange, "JWT Token is invalid or expired gateway.");
         }
     }
 

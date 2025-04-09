@@ -92,7 +92,6 @@ public class AuthenticationService {
                 .orElse(null);
 
         if (user == null) {
-            System.out.println("oamr");
             kafkaProducer.deliverFailedMessage(
                     generateFailedEvent(request.email(),
                             "User not found",

@@ -2,6 +2,7 @@ package esprit.wd.password.controller;
 
 import esprit.wd.password.request.ForgotPassword;
 import esprit.wd.password.service.PasswordResetService;
+import jakarta.ws.rs.QueryParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,16 +18,14 @@ public class PasswordController {
 
     @PostMapping("/forgot/{email}")
     public ResponseEntity<String> forgotPassword(@PathVariable("email") String email) {
-        System.out.println(email);
         return ResponseEntity.ok(passwordResetService.forgotPassword(email));
     }
 
-
     @PostMapping("/reset-password")
-    public ResponseEntity<String> resetPassword(@RequestBody ForgotPassword request) {
-        if (!passwordResetService.validatePasswordResetToken(request.token())) {
+    public ResponseEntity<String> resetPassword(@RequestParam String token, @RequestBody ForgotPassword request) {
+        if (!passwordResetService.validatePasswordResetToken(token)) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid or expired token");
         }
-        return ResponseEntity.ok(passwordResetService.resetPassword(request.token(), request.newPassword()));
+        return ResponseEntity.ok(passwordResetService.resetPassword(token, request));
     }
 }

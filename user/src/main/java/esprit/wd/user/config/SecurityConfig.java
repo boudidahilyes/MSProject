@@ -23,36 +23,47 @@ import org.springframework.security.web.authentication.logout.LogoutHandler;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    private static final String[] WHITE_LIST_URL = {"/api/v1/auth/**"};
-    private final JitAuthenticationFilter jwtAuthFilter;
-    private final AuthenticationProvider authenticationProvider;
-    private final LogoutHandler logoutHandler;
-
     @Bean
-    public SecurityFilterChain securityFilterChain(
-            HttpSecurity http)
-            throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-//                .cors(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(req ->
-                        req.requestMatchers(WHITE_LIST_URL)
-                                .permitAll()
-//                                .requestMatchers("/api/v1/users/changePassword").hasAnyAuthority(Role.PARTIALLY_SUBSCRIBER.name(),Role.SUBSCRIBER.name(),Role.ADMIN.name())
-                                .anyRequest()
-                                .authenticated()
-                )
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-                .logout(logout ->
-                        logout.logoutUrl("/api/v1/auth/logout")
-                                .addLogoutHandler(logoutHandler)
-                                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
-                )
-        ;
+                .csrf(AbstractHttpConfigurer::disable) // Disable CSRF protection
+//                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Custom CORS configuration
+                .authorizeHttpRequests(req -> req.anyRequest().permitAll()) // Allow all requests
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Stateless session management
 
         return http.build();
     }
+
+//    private static final String[] WHITE_LIST_URL = {"/api/v1/users/**","/api/v1/auth/**"};
+//    private final JitAuthenticationFilter jwtAuthFilter;
+//    private final AuthenticationProvider authenticationProvider;
+//    private final LogoutHandler logoutHandler;
+//
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(
+//            HttpSecurity http)
+//            throws Exception {
+//        http
+////                .cors(Customizer.withDefaults())
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .authorizeHttpRequests(req ->
+//                        req.requestMatchers(WHITE_LIST_URL)
+//                                .permitAll()
+////                                .requestMatchers("/api/v1/users/changePassword").hasAnyAuthority(Role.PARTIALLY_SUBSCRIBER.name(),Role.SUBSCRIBER.name(),Role.ADMIN.name())
+//                                .anyRequest()
+//                                .authenticated()
+//                )
+//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+//                .authenticationProvider(authenticationProvider)
+//                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+//                .logout(logout ->
+//                        logout.logoutUrl("/api/v1/auth/logout")
+//                                .addLogoutHandler(logoutHandler)
+//                                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
+//                )
+//        ;
+//
+//        return http.build();
+//    }
 
 }

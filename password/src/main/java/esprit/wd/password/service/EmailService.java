@@ -24,24 +24,23 @@ public class EmailService {
     private final UserServiceClient userServiceClient;
 
     @Async
-    public void sendResetPasswordEmail(PasswordResetToken passwordResetToken) {
-        var user=userServiceClient.getUserByUserId(passwordResetToken.getUserId());
+    public void sendResetPasswordEmail(PasswordResetToken passwordResetToken, String email) throws EmailSendFailedException {
         try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
-            mimeMessageHelper.setTo(user.getEmail());
+            mimeMessageHelper.setTo(email);
             mimeMessageHelper.setSubject("Reset your password");
             mimeMessageHelper.setText("""
                     <div>
-                      <a href="http://localhost:8888/api/v1/password/resetPassword?token=%s" target="_blank">click link to reset</a>
+                      <a href="http://localhost:8888/api/v1/password/reset-password?token=%s" target="_blank">click link to reset</a>
                     </div>
                     """.formatted(passwordResetToken.getToken()), true);
             javaMailSender.send(mimeMessage);
 
         } catch (MessagingException e) {
-            log.error("Failed to send password reset email to {}", user.getEmail());
+            log.error("Failed to send password reset email to {}", email);
             tokenRepository.delete(passwordResetToken);
-            throw new EmailSendFailedException("Failed to send email to " + user.getEmail());
+            throw new EmailSendFailedException("Failed to send email to " + email);
         }
     }
 }

@@ -1,6 +1,7 @@
 package esprit.wd.user.controller;
 
 
+import esprit.wd.user.dto.UserRequest;
 import esprit.wd.user.response.UserResponse;
 import esprit.wd.user.service.UserService;
 import esprit.wd.user.model.User;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -18,9 +20,9 @@ public class UserController {
     private final UserService userService;
 
 
-    @PatchMapping("/updateUserPassword")
+    @PutMapping("/updateUserPassword")
     public ResponseEntity<?> updateUserPassword(
-            @RequestBody User user
+            @RequestBody UserRequest user
     ) {
         userService.updateUserPassword(user);
         return ResponseEntity.ok().build();
@@ -28,17 +30,16 @@ public class UserController {
 
 
     @GetMapping("/getUserByMail/{email}")
-    public ResponseEntity<UserResponse> getUserByMail(
+    public ResponseEntity<String> getUserByMail(
             @PathVariable("email") String email
     ) {
         return ResponseEntity.ok(userService.getUserByMail(email));
     }
 
-    @GetMapping("/getUserByUserId/{userId}")
-    public ResponseEntity<UserResponse> getUserByUserId(
-            @PathVariable("userId") String userId
-    ) {
-        return ResponseEntity.ok(userService.getUserByUserId(userId));
+
+    @GetMapping("/getUsers")
+    public ResponseEntity<List<UserResponse>> getUsers() {
+        return ResponseEntity.ok(userService.getUsers());
     }
 
 }

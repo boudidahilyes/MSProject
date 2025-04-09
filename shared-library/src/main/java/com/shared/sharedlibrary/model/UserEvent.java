@@ -1,4 +1,4 @@
-package esprit.wd.user.dto;
+package com.shared.sharedlibrary.model;
 
 
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 @Data
-@NoArgsConstructor  // <- This is critical
+@NoArgsConstructor
 @AllArgsConstructor
 public class UserEvent {
     private String eventType;
