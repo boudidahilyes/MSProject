@@ -7,7 +7,12 @@ spring:
         locator:
           enabled: true
       routes:
-#        - id: AUTHENTICATION
-#          uri: lb:http://USER
-#          predicates:
-#            - Path=/api/v1/auth/**
+        - id: PRODUCT
+          uri: lb:http://PRODUCT
+          predicates:
+            - Path=/api/v1/product, /api/v1/product/**
+
+        - id: CATEGORY
+          uri: lb:http://CATEGORY
+          predicates:
+            - Path=/api/v1/category ,/api/v1/category/**
