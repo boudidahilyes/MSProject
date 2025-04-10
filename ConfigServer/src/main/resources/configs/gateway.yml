@@ -11,3 +11,7 @@ spring:
           uri: lb:http://CART
           predicates:
             - Path=/api/v1/cart/**
+        - id: DISCOUNT
+          uri: lb:http://DISCOUNT
+          predicates:
+            - Path=/api/v1/discount/**
