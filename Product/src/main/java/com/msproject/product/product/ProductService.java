@@ -64,7 +64,7 @@ public class ProductService {
     }
     public boolean hasEnoughProducts(int id, int quantity) {
         Product product = productRepository.findById(id).get();
-        return product.getQuantity() >= quantity;
+        return product.getQuantity() + quantity >= 0;
     }
 
 }
