@@ -8,10 +8,10 @@
         <version>3.3.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.moquawel</groupId>
+    <groupId>esprit.wd</groupId>
     <artifactId>user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>authentication</name>
+    <name>user</name>
     <description>authentication project for Spring Boot</description>
     <url/>
     <licenses>
@@ -61,10 +61,6 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
@@ -103,9 +99,18 @@
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
-
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+        </dependency>
 
 
     </dependencies>
@@ -136,6 +141,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>user</finalName>
     </build>
 
 </project>

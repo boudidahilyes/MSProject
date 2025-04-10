@@ -1,6 +1,8 @@
 package esprit.wd.user.service;
 
 
+import esprit.wd.user.annotations.AuditEvent;
+import esprit.wd.user.model.KafkaEventType;
 import esprit.wd.user.repository.UserRepository;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,6 +22,7 @@ public class LogoutService implements LogoutHandler {
     private final UserRepository userRepository;
 
     @Override
+    @AuditEvent(eventType = KafkaEventType.LOGOUT)
     public void logout(
             HttpServletRequest request,
             HttpServletResponse response,

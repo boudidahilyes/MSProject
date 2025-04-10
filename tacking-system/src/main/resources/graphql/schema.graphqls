@@ -1,9 +1,8 @@
 scalar MapScalar
 
-
 type SuccessEventData {
     eventId: ID!
-    String: String
+    eventType: String
     timestamp: String
     email: String
     metadata: MapScalar
@@ -11,14 +10,15 @@ type SuccessEventData {
 
 type FailureEventData {
     eventId: ID!
-    String: String
+    eventType: String
     timestamp: String
     email: String
     metadata: MapScalar
 }
 
-
 type Query {
     getSuccessEvents: [SuccessEventData]
+    getSuccessEventsByEventType(eventType: String): [SuccessEventData]
+    getSuccessEventsByEmail(email: String): [SuccessEventData]
     getFailureEvents: [FailureEventData]
 }

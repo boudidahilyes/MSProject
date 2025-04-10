@@ -9,17 +9,6 @@ spring:
       port: 27018
       database: users_wd
       authentication-database: admin
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: salhiomar362@gmail.com
-    password: coktmejzvjwpkdbz
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
   kafka:
     producer:
       bootstrap-servers: localhost:9092
