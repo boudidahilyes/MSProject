@@ -1,5 +1,5 @@
-package com.msproject.complaint.repository;
-import com.msproject.complaint.entity.ResponseComplaint;
+package com.msproject.complaintresponse.repository;
+import com.msproject.complaintresponse.entity.ResponseComplaint;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

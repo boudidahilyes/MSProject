@@ -1,4 +1,4 @@
-package com.msproject.complaint.entity;
+package com.msproject.complaintresponse.entity;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

@@ -33,7 +33,7 @@
         </processorPath>
         <module name="Gateway" />
       </profile>
-      <profile name="Annotation profile for complaint" enabled="true">
+      <profile name="Annotation profile for complaintResponse" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -41,6 +41,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
         </processorPath>
         <module name="complaint" />
+        <module name="complaintResponse" />
       </profile>
     </annotationProcessing>
   </component>
@@ -56,6 +57,7 @@
       <module name="Ticket" options="" />
       <module name="User" options="" />
       <module name="complaint" options="-parameters" />
+      <module name="complaintResponse" options="-parameters" />
     </option>
   </component>
 </project>

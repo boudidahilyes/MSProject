@@ -8,12 +8,21 @@ spring:
           enabled: true
       routes:
         - id: complaint-service
-          uri: lb:http://complaint
+          uri: lb://complaint
           predicates:
             - Path=/api/v1/complaint/**
 
+        - id: complaintResponse-service
+          uri: lb://complaintResponse
+          predicates:
+            - Path=/api/v1/complaintResponse/**
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

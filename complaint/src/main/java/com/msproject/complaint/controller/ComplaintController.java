@@ -24,10 +24,8 @@ import java.util.Map;
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class ComplaintController {
-
     private final ComplaintService complaintService;
     private final AiService aiService;
-
     @PostMapping("/{userId}")
     public ResponseEntity<?> addComplaint(@Valid @RequestBody Complaint complaint,
                                           @PathVariable String userId,
@@ -54,25 +52,21 @@ public class ComplaintController {
         }
     }
 
-
     @GetMapping("")
     public ResponseEntity<List<Complaint>> getAll(
     ) {
         return ResponseEntity.ok(complaintService.getAllComplaints());
     }
-
     @GetMapping("/get/{id}")
     public ResponseEntity<Complaint> getById(@PathVariable String id
     ) {
         return ResponseEntity.ok(complaintService.getComplaintById(id));
     }
-
     @GetMapping("/{userId}")
     public ResponseEntity<List<Complaint>> getComplaintByUserId(@PathVariable String userId
     ) {
         return ResponseEntity.ok(complaintService.getComplaintByUserId(userId));
     }
-
     @GetMapping("/getType/{type}")
     public ResponseEntity<List<Complaint>> getResponsesByType(@PathVariable ComplaintType type
     ) {

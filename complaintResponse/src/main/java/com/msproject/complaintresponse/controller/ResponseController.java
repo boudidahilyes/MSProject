@@ -1,7 +1,6 @@
-package com.msproject.complaint.controller;
-
-import com.msproject.complaint.entity.ResponseComplaint;
-import com.msproject.complaint.service.ResponseService;
+package com.msproject.complaintresponse.controller;
+import com.msproject.complaintresponse.entity.ResponseComplaint;
+import com.msproject.complaintresponse.service.ResponseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
