@@ -13,7 +13,7 @@ public class StripeConfig {
     private String publicKey;
 
     @Value("${stripe.secret-key}")
-    private String secretKey;
+    public String secretKey;
 
 
     @PostConstruct
