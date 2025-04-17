@@ -11,22 +11,15 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="Order" />
-        <module name="Ticket" />
-        <module name="Product" />
-        <module name="Review" />
         <module name="User" />
-        <module name="Cart" />
       </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EurekaServer" />
         <module name="config-server" />
         <module name="password" />
         <module name="discovery" />
-        <module name="ConfigServer" />
         <module name="user" />
         <module name="gateway" />
       </profile>
@@ -36,24 +29,30 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="tacking-system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Cart" target="17" />
+      <module name="ConfigServer" target="17" />
+      <module name="EurekaServer" target="1.5" />
+      <module name="Order" target="1.5" />
+      <module name="Product" target="1.5" />
+      <module name="Review" target="1.5" />
       <module name="shared-library" target="17" />
+      <module name="Ticket" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Cart" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
-      <module name="EurekaServer" options="-parameters" />
-      <module name="Order" options="-parameters" />
-      <module name="Product" options="-parameters" />
-      <module name="Review" options="-parameters" />
-      <module name="Ticket" options="-parameters" />
+      <module name="EurekaServer" options="" />
+      <module name="Order" options="" />
+      <module name="Product" options="" />
+      <module name="Review" options="" />
+      <module name="Ticket" options="" />
       <module name="User" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="discovery" options="-parameters" />
