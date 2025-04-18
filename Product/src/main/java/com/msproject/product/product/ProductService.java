@@ -1,8 +1,8 @@
 package com.msproject.product.product;
 
+import com.msproject.product.category.Category;
 import com.msproject.product.category.CategoryClient;
 import lombok.RequiredArgsConstructor;
-import msproject.category.category.Category;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

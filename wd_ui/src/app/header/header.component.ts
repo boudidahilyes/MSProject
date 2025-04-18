@@ -8,7 +8,7 @@ import { CartService } from '../service/cart/cart.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  cartItems!: any[];
+  cartItems: any[] = []; // Initialize as an empty array
   userId = 'userId1'; 
 
   constructor(private cartService: CartService) {}
@@ -19,9 +19,7 @@ export class HeaderComponent implements OnInit {
 
   loadCart(): void {
     this.cartService.getCart(this.userId).subscribe((items) => {
-      if(items.length != 0) {
-        this.cartItems = items;
-      }
+      this.cartItems = items; // Assign items directly
     });
   }
 
