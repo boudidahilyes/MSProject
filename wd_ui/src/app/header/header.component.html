@@ -38,6 +38,7 @@
             </div>
           </div>
           <mat-divider></mat-divider>
+          <p>Total Price: {{ totalPrice | currency }}</p>
         </div>
         <button mat-menu-item class="order-now-btn" (click)="orderNow()">
           <mat-icon>shopping_bag</mat-icon>

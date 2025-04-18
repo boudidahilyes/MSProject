@@ -10,7 +10,7 @@ import { CartService } from '../service/cart/cart.service';
 export class HeaderComponent implements OnInit {
   cartItems: any[] = []; // Initialize as an empty array
   userId = 'userId1';
-
+  totalPrice: number = 0; // Initialize total price
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -20,7 +20,15 @@ export class HeaderComponent implements OnInit {
   loadCart(): void {
     this.cartService.getCart(this.userId).subscribe((items) => {
       this.cartItems = items; // Assign items directly
+            this.calculateTotalPrice(); // Recalculate total price
     });
+  }
+    calculateTotalPrice(): void {
+      if (this.cartItems.length === 0) {
+        this.totalPrice = 0; // Set total price to 0 if cart is empty
+      } else {
+        this.totalPrice = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      }
   }
 
   increaseQuantity(index: number): void {
