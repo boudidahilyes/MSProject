@@ -1,0 +1,79 @@
+<div class="create-product-container">
+  <h2 class="form-title">Add New Product</h2>
+  <form class="product-form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="form-label" for="name">Product Name</label>
+      <input
+        class="form-input"
+        type="text"
+        id="name"
+        formControlName="name"
+        required
+      />
+      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="error-message">
+        Product name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="description">Description</label>
+      <textarea
+        class="form-textarea"
+        id="description"
+        formControlName="description"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="price">Price</label>
+      <input
+        class="form-input"
+        type="number"
+        id="price"
+        formControlName="price"
+        required
+        step="0.01"
+        min="0"
+      />
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="error-message">
+        Please enter a valid price (greater than 0).
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="quantity">Quantity</label>
+      <input
+        class="form-input"
+        type="number"
+        id="quantity"
+        formControlName="quantity"
+        required
+        min="0"
+      />
+      <div *ngIf="productForm.get('quantity')?.invalid && productForm.get('quantity')?.touched" class="error-message">
+        Quantity is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="idCategory">Category</label>
+      <select
+        class="form-select"
+        id="idCategory"
+        formControlName="idCategory"
+        required
+      >
+        <option value="" disabled>Select a category</option>
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+      <div *ngIf="productForm.get('idCategory')?.invalid && productForm.get('idCategory')?.touched" class="error-message">
+        Category is required.
+      </div>
+    </div>
+
+    <button class="submit-button" type="submit" [disabled]="productForm.invalid">Create Product</button>
+  </form>
+</div>

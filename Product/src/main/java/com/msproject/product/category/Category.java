@@ -1,4 +1,4 @@
-package msproject.category.category;
+package com.msproject.product.category;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

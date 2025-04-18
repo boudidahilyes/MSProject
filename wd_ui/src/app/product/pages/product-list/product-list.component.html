@@ -1,0 +1,56 @@
+<div class="header-bar">
+  <button class="btn-add" (click)="goToCreate()">+ Add Product</button>
+</div>
+<div class="product-page">
+  
+  <div class="filter-sidebar">
+    <h3>Filter Products</h3>
+
+    <label for="name">Name:</label>
+    <input id="name" type="text" [(ngModel)]="filters.name" (input)="applyFilters()" />
+
+    <label for="minPrice">Min Price:</label>
+    <input id="minPrice" type="number" [(ngModel)]="filters.minPrice" (input)="applyFilters()" />
+
+    <label for="maxPrice">Max Price:</label>
+    <input id="maxPrice" type="number" [(ngModel)]="filters.maxPrice" (input)="applyFilters()" />
+
+    <label for="category">Category:</label>
+    <select id="category" [(ngModel)]="filters.categoryId" (change)="applyFilters()">
+      <option value="">All</option>
+      <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+    </select>
+
+    <button (click)="resetFilters()">Reset Filters</button>
+  </div>
+
+  <div class="product-list-container">
+    <h2 class="product-list-title">Product List</h2>
+    <div *ngIf="filteredProducts.length === 0" class="empty-message">No products found.</div>
+
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <div class="product-header">
+          <h3>
+            {{ product.name }}
+            <span class="cart-icon">🛒</span>
+          </h3>
+          <span class="price-tag">${{ product.price }}</span>
+        </div>
+    
+        <p class="product-description">{{ product.description }}</p>
+    
+        <div class="product-details">
+          <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+          <p><strong>Category:</strong> {{ product.categoryName }}</p>
+          <p><strong>Category Description:</strong> {{ product.categoryDescription }}</p>
+          <div class="card-actions">
+            <button class="update-btn" [routerLink]="['/products/update', product.id]">Update</button>
+            <button (click)="deleteProduct(product.id)" class="btn-delete">Delete</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

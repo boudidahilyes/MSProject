@@ -1,0 +1,58 @@
+<!-- category-form.component.html -->
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Edit Category' : 'Create New Category' }}</h2>
+  
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="category-form">
+    <div class="form-group" [class.invalid]="name?.invalid && (name?.dirty || name?.touched)">
+      <label for="name">Category Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        formControlName="name" 
+        placeholder="Enter category name"
+        [class.invalid]="name?.invalid && (name?.dirty || name?.touched)"
+      >
+      <div class="error-message" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <span *ngIf="name?.errors?.['required']">Name is required</span>
+        <span *ngIf="name?.errors?.['maxlength']">Name is too long (max 50 chars)</span>
+      </div>
+      <div class="hint">Max 50 characters</div>
+    </div>
+
+    <div class="form-group" [class.invalid]="description?.invalid && (description?.dirty || description?.touched)">
+      <label for="description">Description</label>
+      <textarea 
+        id="description" 
+        formControlName="description" 
+        placeholder="Enter category description"
+        rows="4"
+        [class.invalid]="description?.invalid && (description?.dirty || description?.touched)"
+      ></textarea>
+      <div class="error-message" *ngIf="description?.invalid && (description?.dirty || description?.touched)">
+        <span *ngIf="description?.errors?.['maxlength']">Description is too long (max 200 chars)</span>
+      </div>
+      <div class="hint">Max 200 characters</div>
+    </div>
+
+    <div class="form-actions">
+      <button 
+        type="submit"
+        [disabled]="categoryForm.invalid || isLoading"
+        class="primary-button"
+      >
+        <span *ngIf="!isLoading">
+          {{ isEditMode ? 'Update Category' : 'Create Category' }}
+        </span>
+        <span *ngIf="isLoading" class="loading-text">Processing...</span>
+      </button>
+      
+      <button 
+        type="button"
+        (click)="Router.navigate(['/categories'])"
+        class="secondary-button"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
