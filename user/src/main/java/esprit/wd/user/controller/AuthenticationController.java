@@ -24,21 +24,21 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<RefreshResponse> register(
-            @RequestBody @Valid RegisterRequest request
+            @RequestBody  RegisterRequest request
     ) {
         return ResponseEntity.ok(authenticationService.register(request));
     }
 
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login(
-            @RequestBody @Valid AuthenticationRequest request
+            @RequestBody  AuthenticationRequest request
     ) {
         return ResponseEntity.ok(authenticationService.login(request));
     }
 
     @PostMapping("/refresh")
     public ResponseEntity<RefreshResponse> login(
-            @RequestBody @Valid RefreshTokenRequest request
+            @RequestBody  RefreshTokenRequest request
     ) {
         return ResponseEntity.ok(authenticationService.refresh(request));
     }

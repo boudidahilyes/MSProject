@@ -32,7 +32,7 @@ public class EmailService {
             mimeMessageHelper.setSubject("Reset your password");
             mimeMessageHelper.setText("""
                     <div>
-                      <a href="http://localhost:8888/api/v1/password/reset-password?token=%s" target="_blank">click link to reset</a>
+                      <a href="http://localhost:4200/reset-password?token=%s" target="_blank">click link to reset</a>
                     </div>
                     """.formatted(passwordResetToken.getToken()), true);
             javaMailSender.send(mimeMessage);
