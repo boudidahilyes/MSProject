@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Complaint} from "../core/models/complaint/Complaint";
 import {ComplaintService} from "../core/services/complaint/ComplaintService";
+import { AuthService } from '../service/user/auth.service';
 
 @Component({
   selector: 'app-complaint',
@@ -27,7 +28,7 @@ export class ComplaintComponent {
   ];
 
   constructor(private fb: FormBuilder,
-              private complaintService: ComplaintService) {
+              private complaintService: ComplaintService,private auth:AuthService) {
     this.complaintForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
       complaintType: ['', Validators.required],
@@ -70,6 +71,7 @@ export class ComplaintComponent {
 
     setTimeout(() => {
       const complaint: Complaint = this.complaintForm.value;
+      // this.auth.getUserId()||'null'
       this.complaintService.addComplaint("67f3cb886874c45776d2e0a6", complaint).subscribe({
         next: () => {
           this.complaintForm.reset();

@@ -2,6 +2,27 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for Cart" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
+        </processorPath>
+        <module name="Cart" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EurekaServer" />
+        <module name="password" />
+        <module name="ConfigServer" />
+        <module name="user" />
+        <module name="Gateway" />
+      </profile>
       <profile name="Annotation profile for Order" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -11,17 +32,18 @@
         </processorPath>
         <module name="Order" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile name="Annotation profile for tacking-system" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EurekaServer" />
-        <module name="maven-archiver" />
-        <module name="password" />
-        <module name="ConfigServer" />
-        <module name="User" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="tacking-system" />
+        <module name="Ticket" />
+        <module name="Review" />
       </profile>
-      <profile name="Annotation profile for Product" enabled="true">
+      <profile name="Annotation profile for complaintResponse" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -31,26 +53,10 @@
         <module name="Product" />
         <module name="Discount" />
         <module name="Category" />
-        <module name="Cart" />
-      </profile>
-      <profile name="Annotation profile for tacking-system" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="Ticket" />
-        <module name="Review" />
-        <module name="tacking-system" />
-        <module name="gateway" />
+        <module name="complaint" />
+        <module name="complaintResponse" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Gateway" target="1.8" />
-      <module name="maven-archiver (1)" target="1.5" />
-      <module name="maven-archiver (2)" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -64,10 +70,11 @@
       <module name="Product" options="-parameters" />
       <module name="Review" options="-parameters" />
       <module name="Ticket" options="-parameters" />
-      <module name="User" options="-parameters" />
-      <module name="gateway" options="-parameters" />
+      <module name="complaint" options="-parameters" />
+      <module name="complaintResponse" options="-parameters" />
       <module name="password" options="-parameters" />
       <module name="tacking-system" options="-parameters" />
+      <module name="user" options="-parameters" />
     </option>
   </component>
 </project>

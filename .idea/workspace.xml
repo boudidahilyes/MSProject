@@ -4,31 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6204ffd8-f654-4396-a393-59f717fba75d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/configs/password.yml" afterDir="false" />
+    <list default="true" id="a71dbacd-41fd-4516-944b-8a2772edc88d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/complaint.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/complaintResponse.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/tracking-system.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/user.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/gateway.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gateway/src/main/java/com/msproject/gateway/GatewayApplication.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/user/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/user/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/aspect/AuditAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/aspect/AuditAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/filter/JitAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/response/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/response/AuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/test/java/com/msproject/user/UserApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/ComplaintApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/controller/ComplaintController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/controller/userController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/Complaint$ComplaintBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/Complaint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/ComplaintType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/StatusComplaint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/exception/ComplaintNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/exception/InvalidComplaintException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/exception/UserNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/repository/ComplaintRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/service/AiService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/service/ComplaintService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/service/UtilisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/complaint-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/complaint-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/surefire-reports/TEST-com.msproject.complaint.ComplaintApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/surefire-reports/com.msproject.complaint.ComplaintApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaint/target/test-classes/com/msproject/complaint/ComplaintApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/ComplaintResponseApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/controller/ResponseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ComplaintDto$ComplaintDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ComplaintDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ResponseComplaint$ResponseComplaintBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ResponseComplaint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/exception/ComplaintNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/exception/InvalidComplaintException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/exception/UserNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/repository/ResponseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/service/ComplaintService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/service/IResponseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/service/ResponseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/configs/password.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/password.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wd_ui/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/complaint/complaint.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/complaint/complaint.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/core/services/complaint/ComplaintResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/core/services/complaint/ComplaintResponse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/core/services/complaint/ComplaintService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/core/services/complaint/ComplaintService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +91,33 @@
     "accountId": "8ecb770e-7a61-4273-9cf1-4f9e16b89cae"
   }
 }]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 6
 }]]></component>
-  <component name="ProjectId" id="2vt1kCuB1rctxPrpWOSSAZmSi9p" />
+  <component name="ProjectId" id="2vtLXlZIHQswFl6RxNTysnZH7Mn" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Maven.User [clean].executor": "Run",
-    "Maven.User [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging main",
+    "Spring Boot.ComplaintResponseApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/salhi/Bureau/MSProject/gateway/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,14 +137,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CartApplication">
-    <configuration name="CartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Cart" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.cart.CartApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
     <configuration name="CategoryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Category" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="msproject.category.CategoryApplication" />
@@ -104,16 +145,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="ConfigServer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.configserver.ConfigServerApplication" />
+    <configuration name="ComplaintResponseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="complaintResponse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.complaintresponse.ComplaintResponseApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Discount" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.discount.DiscountApplication" />
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ConfigServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.configserver.ConfigServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.msproject.configserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,23 +172,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="gateway" />
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="esprit.wd.gateway.GatewayApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Order" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.order.OrderApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PasswordApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="password" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="esprit.wd.password.PasswordApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="esprit.wd.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,13 +192,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReviewApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Review" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.review.ReviewApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TackingSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="tacking-system" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="esprit.wd.tackingsystem.TackingSystemApplication" />
@@ -167,20 +199,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TicketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Ticket" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.ticket.TicketApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="User" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="esprit.wd.user.UserApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -193,12 +217,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6204ffd8-f654-4396-a393-59f717fba75d" name="Changes" comment="" />
-      <created>1744949699750</created>
+      <changelist id="a71dbacd-41fd-4516-944b-8a2772edc88d" name="Changes" comment="" />
+      <created>1744959467861</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1744949699750</updated>
-      <workItem from="1744949701995" duration="1930000" />
+      <updated>1744959467861</updated>
+      <workItem from="1744959469167" duration="785000" />
     </task>
     <servers />
   </component>

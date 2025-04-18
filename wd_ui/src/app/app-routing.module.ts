@@ -8,7 +8,7 @@ import { CategoryFormComponent } from './product/pages/category-form/category-fo
 import { CategoryListComponent } from './product/pages/category-list/category-list.component';
 import { CreateProductComponent } from './product/pages/create-product/create-product.component';
 import { UpdateProductComponent } from './product/pages/update-product/update-product.component';
-import { ProductListComponent } from './product/pages/product-list/product-list.component';
+import { ProductListBackComponent } from './product/pages/product-list-back/product-list.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { ResponseComplaintComponent } from './response-complaint/response-complaint.component';
 import { ShowComplaintComponent } from './show-complaint/show-complaint.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'categories', component: CategoryListComponent },
   { path: 'products/create', component: CreateProductComponent },
   { path: 'products/update/:id', component: UpdateProductComponent },
-  { path: 'products', component: ProductListComponent },
+  { path: 'products-back', component: ProductListBackComponent },
   {
     path: 'complaint',
     component: ComplaintComponent,

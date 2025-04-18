@@ -7,7 +7,7 @@ import {ResponseComplaint} from "../../models/complaint/ComplaintReponse";
   providedIn: 'root'
 })
 export class ComplaintResponseService {
-  private baseUrl = 'http://localhost:8091/api/v1/complaintResponse';
+  private baseUrl = 'http://localhost:8888/api/v1/complaintResponse';
 
   constructor(private http: HttpClient) {}
 

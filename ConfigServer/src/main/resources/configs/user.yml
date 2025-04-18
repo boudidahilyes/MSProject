@@ -1,0 +1,33 @@
+spring:
+  data:
+    mongodb:
+#      uri: mongodb+srv://omar:FcybyLAxvwU6nsxT@cluster0.kp2s5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+#      uri: mongodb://localhost:27017
+      username: omar
+      password: omar
+      host: localhost
+      port: 27018
+      database: users_wd
+      authentication-database: admin
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+
+
+server:
+  port: 9001
+
+
+
+application:
+  security:
+    jwt:
+      secret-key: 3A3819FB8D35506C579DB26CC2B33952550D02BE99FBF626D8F9C4E8E934F1A3
+      expiration: 604800000 #900000 # 15 minutes
+      refresh-token:
+          expiration: 604800000 # 7 days

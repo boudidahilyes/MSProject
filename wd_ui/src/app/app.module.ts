@@ -19,7 +19,7 @@ import { ResetPasswordComponent } from './user/reset-password/reset-password.com
 import { CategoryFormComponent } from './product/pages/category-form/category-form.component';
 import { CategoryListComponent } from './product/pages/category-list/category-list.component';
 import { CreateProductComponent } from './product/pages/create-product/create-product.component';
-import { ProductListComponent } from './product/pages/product-list/product-list.component';
+import { ProductListBackComponent } from './product/pages/product-list-back/product-list.component';
 import { UpdateProductComponent } from './product/pages/update-product/update-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplaintComponent } from './complaint/complaint.component';
@@ -39,7 +39,7 @@ import { ListOrdersComponent } from './list-orders/list-orders.component';
     CategoryFormComponent,
     CategoryListComponent,
     CreateProductComponent,
-    ProductListComponent,
+    ProductListBackComponent,
     UpdateProductComponent,
     ComplaintComponent,
     ShowComplaintComponent,
