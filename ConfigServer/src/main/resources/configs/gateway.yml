@@ -1,0 +1,17 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: CART
+          uri: lb:http://CART
+          predicates:
+            - Path=/api/v1/cart/**
+        - id: DISCOUNT
+          uri: lb:http://DISCOUNT
+          predicates:
+            - Path=/api/v1/discount/**
