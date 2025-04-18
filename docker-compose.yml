@@ -1,5 +1,7 @@
-services:
+version: '3.8'
 
+services:
+  # Infrastructure Services
   mongo:
     image: mongo
     container_name: mongo
@@ -10,6 +12,8 @@ services:
       - "27018:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - microservice-net  # Added to network
     restart: unless-stopped
 
   kafka:
@@ -17,64 +21,228 @@ services:
     container_name: kafka
     ports:
       - "9092:9092"
+    networks:
+      - microservice-net  # Added to network
 
   zipkin:
-    container_name: zipkin
     image: openzipkin/zipkin
+    container_name: zipkin
     ports:
       - "9411:9411"
+    networks:
+      - microservice-net  # Added to network
 
+  # Config Server
+  config-server:
+    image: config-server:1.0
+    build: ./config-server
+    ports:
+      - "8081:8081"  # Changed to standard port
+    environment:
+      SPRING_PROFILES_ACTIVE: docker,native
+      SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCHLOCATIONS: "file:/config-repo"
+      SPRING_APPLICATION_NAME: config-server
+    volumes:
+      - ./config-server/config-repo:/config-repo  # Mount config files
+    networks:
+      - microservice-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Discovery Service
   discovery:
+    image: discovery-service:1.0
     build: ./discovery
-    image: discovery:1.0
-    container_name: discovery
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      EUREKA_CLIENT_REGISTER-WITH-EUREKA: "false"  # Single quotes for YAML boolean
+      EUREKA_CLIENT_FETCH-REGISTRY: "false"
+      SPRING_APPLICATION_NAME: discovery-service
     ports:
       - "8082:8082"
-    environment:
-      - EUREKA_SERVER_URL=http://discovery:8082/eureka/
-
-  config-server:
-    build: ./config-server
-    image: config-server:1.0
-    container_name: config-server
-    ports:
-      - "8081:8081"
     depends_on:
-      - discovery
-    restart: unless-stopped
+      config-server:
+        condition: service_healthy
+    networks:
+      - microservice-net
 
+  # Other Services (gateway, user, etc)
   gateway:
+    image: gateway-service:1.0
     build: ./gateway
-    image: gateway:1.0
-    container_name: gateway
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8081  # Fixed port
+      EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE: http://discovery:8082/eureka/  # Trailing slash important!
+      EUREKA_INSTANCE_PREFER_IP_ADDRESS: "false"
+      EUREKA_CLIENT_REGISTER-WITH-EUREKA: "true"
+      EUREKA_CLIENT_FETCH-REGISTRY: "true"
+      SPRING_APPLICATION_NAME: gateway-service
     ports:
       - "8888:8888"
     depends_on:
       - discovery
       - config-server
-    environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8082/eureka/
-      - SPRING_CLOUD_CONFIG_URI=http://config-server:8081
+    networks:
+      - microservice-net
 
   user:
+    image: user-service:1.0
     build: ./user
-    image: user:1.0
-    container_name: user
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8081
+      EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE: http://eureka:8761/eureka/
     ports:
       - "9001:9001"
     depends_on:
-      - mongo
-      - kafka
-      - zipkin
       - discovery
       - config-server
-      - gateway
-    environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8082/eureka/
-      - SPRING_CLOUD_CONFIG_URI=http://config-server:8081
+    networks:
+      - microservice-net
+
+networks:
+  microservice-net:
+    driver: bridge
 
 volumes:
   mongo_data:
+
+
+
+
+
+
+
+
+
+
+
+#services:
+#
+#  mongo:
+#    image: mongo
+#    container_name: mongo
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: omar
+#      MONGO_INITDB_ROOT_PASSWORD: omar
+#    ports:
+#      - "27018:27017"
+#    volumes:
+#      - mongo_data:/data/db
+#    restart: unless-stopped
+#
+#  kafka:
+#    image: apache/kafka:latest
+#    container_name: kafka
+#    ports:
+#      - "9092:9092"
+#
+#  zipkin:
+#    container_name: zipkin
+#    image: openzipkin/zipkin
+#    ports:
+#      - "9411:9411"
+#
+#
+#
+##
+##  config-server:
+##    image: config-server:1.0
+##    build: ./config-server
+##    ports:
+##      - "8081:8081"
+##    environment:
+##      SPRING_PROFILES_ACTIVE: docker,native
+##      SPRING_CONFIG_LOCATION: classpath:/configs/
+##    networks:
+##      - microservice-net
+#
+#  discovery:
+#    image: discovery-service:1.0
+#    build: ./discovery
+#    environment:
+#      SPRING_PROFILES_ACTIVE: docker
+#      SERVER_PORT: 8082
+#      eureka.client.register-with-eureka: false
+#      eureka.client.fetch-registry: false
+#      SPRING_CONFIG_URI: http://config-server:8081
+#    ports:
+#      - "8082:8082"
+#    depends_on:
+#      - config-server
+#    networks:
+#      - microservice-net
+#
+#  gateway:
+#    image: gateway-service:1.0
+#    build: ./gateway
+#    environment:
+#      SPRING_CLOUD_CONFIG_URI: http://config-server:8081
+#      APPLICATION_SECURITY_JWT_SECRET_KEY: 3A3819FB8D35506C579DB26CC2B33952550D02BE99FBF626D8F9C4E8E934F1A3
+#    ports:
+#      - "8888:8888"
+#    depends_on:
+#      - discovery
+#      - config-server
+#    networks:
+#      - microservice-net
+#
+#  user:
+#    image: user-service:1.0
+#    build: ./user
+#    environment:
+#      SPRING_CLOUD_CONFIG_URI: http://config-server:8081
+#      APPLICATION_SECURITY_JWT_SECRET_KEY: 3A3819FB8D35506C579DB26CC2B33952550D02BE99FBF626D8F9C4E8E934F1A3
+#      APPLICATION_SECURITY_JWT_EXPIRATION: 604800000
+#      APPLICATION_SECURITY_JWT_REFRESH_TOKEN_EXPIRATION: 604800000
+#    ports:
+#      - "9001:9001"
+#    depends_on:
+#      - discovery
+#      - config-server
+#    networks:
+#      - microservice-net
+#
+#  password:
+#    image: password-service:1.0
+#    build: ./password
+#    ports:
+#      - "9002:9002"
+#    depends_on:
+#      - discovery
+#      - config-server
+#    networks:
+#      - microservice-net
+#
+#  tracking:
+#    image: tracking-service:1.0
+#    build: ./tracking
+#    ports:
+#      - "9003:9003"
+#    depends_on:
+#      - discovery
+#      - config-server
+#    networks:
+#      - microservice-net
+#
+#networks:
+#  microservice-net:
+#    driver: bridge
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#volumes:
+#  mongo_data:
 
 
 

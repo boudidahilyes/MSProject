@@ -1,5 +1,15 @@
+#spring:
+#  config:
+#    import: optional:configserver:http://localhost:8081
+#  application:
+#    name: gateway
 spring:
-  config:
-    import: optional:configserver:http://localhost:8081
   application:
+<<<<<<< HEAD
     name: gateway
+=======
+    name: gateway
+  cloud:
+    config:
+      uri: http://config-server:8081
+>>>>>>> user_branch

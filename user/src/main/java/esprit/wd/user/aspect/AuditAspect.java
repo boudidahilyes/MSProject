@@ -22,6 +22,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 @Aspect
 @Component
@@ -42,7 +43,9 @@ public class AuditAspect {
     public void auditSuccess(JoinPoint joinPoint, AuditEvent auditEvent) {
         System.out.println(Arrays.toString(joinPoint.getArgs()));
         KafkaEventType eventType = auditEvent.eventType();
-        kafkaProducer.deliverSuccessMessage(extractEmailFromArgs(joinPoint.getArgs()), eventType);
+        var mail = extractEmailFromArgs(joinPoint.getArgs());
+        if (mail != null)
+            kafkaProducer.deliverSuccessMessage(mail, eventType);
     }
 
     @AfterThrowing(
@@ -51,24 +54,33 @@ public class AuditAspect {
             argNames = "joinPoint,auditEvent,ex")
     public void auditFailure(JoinPoint joinPoint, AuditEvent auditEvent, Exception ex) {
         KafkaEventType eventType = auditEvent.eventType();
-        kafkaProducer.deliverFailedMessage(extractEmailFromArgs(joinPoint.getArgs()), ex.getMessage(), eventType);
+        var mail = extractEmailFromArgs(joinPoint.getArgs());
+        if (mail != null)
+            kafkaProducer.deliverFailedMessage(mail, ex.getMessage(), eventType);
+
     }
 
     private String extractEmailFromArgs(Object[] args) {
         return Arrays.stream(args)
                 .filter(arg -> arg instanceof AuthenticationRequest || arg instanceof RegisterRequest || arg instanceof RefreshTokenRequest || arg instanceof HttpServletRequest)
                 .map(arg -> {
-                    if (arg instanceof AuthenticationRequest) {
-                        return ((AuthenticationRequest) arg).email();
-                    } else if (arg instanceof RegisterRequest) {
-                        return ((RegisterRequest) arg).email();
-                    } else if (arg instanceof RefreshTokenRequest) {
-                        return ((RefreshTokenRequest) arg).username();
-                    } else {
-                        return getMail(((HttpServletRequest) arg).getHeader("Authorization"));
+                    try {
+                        if (arg instanceof AuthenticationRequest) {
+                            return ((AuthenticationRequest) arg).email();
+                        } else if (arg instanceof RegisterRequest) {
+                            return ((RegisterRequest) arg).email();
+                        } else if (arg instanceof RefreshTokenRequest) {
+                            return ((RefreshTokenRequest) arg).username();
+                        } else if (arg instanceof HttpServletRequest) {
+                            String authHeader = ((HttpServletRequest) arg).getHeader("Authorization");
+                            return authHeader != null ? getMail(authHeader) : null;
+                        }
+                        return null;
+                    } catch (Exception e) {
+                        return null;
                     }
-
                 })
+                .filter(Objects::nonNull)  // Remove any null values
                 .findFirst()
                 .orElse(null);
     }

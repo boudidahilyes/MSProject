@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -27,17 +26,30 @@ import { ComplaintComponent } from './complaint/complaint.component';
 import { ShowComplaintComponent } from './show-complaint/show-complaint.component';
 import { ResponseComplaintComponent } from './response-complaint/response-complaint.component';
 import { PopupComponent } from './popup/popup.component';
-
+import { OrdersComponent } from './orders/orders.component';
+import { ListOrdersComponent } from './list-orders/list-orders.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent,RegisterComponent, ForgotPasswordComponent, ResetPasswordComponent,
-    CategoryFormComponent, CategoryListComponent, CreateProductComponent, ProductListComponent, UpdateProductComponent,
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    CategoryFormComponent,
+    CategoryListComponent,
+    CreateProductComponent,
+    ProductListComponent,
+    UpdateProductComponent,
     ComplaintComponent,
     ShowComplaintComponent,
     ResponseComplaintComponent,
-    PopupComponent
+    PopupComponent,
+    OrdersComponent,
+    ListOrdersComponent,
   ],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -49,7 +61,8 @@ import { PopupComponent } from './popup/popup.component';
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule],
+    MatIconModule,
+  ],
 
   providers: [],
   bootstrap: [AppComponent],

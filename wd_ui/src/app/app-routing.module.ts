@@ -12,6 +12,8 @@ import { ProductListComponent } from './product/pages/product-list/product-list.
 import { ComplaintComponent } from './complaint/complaint.component';
 import { ResponseComplaintComponent } from './response-complaint/response-complaint.component';
 import { ShowComplaintComponent } from './show-complaint/show-complaint.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ListOrdersComponent } from './list-orders/list-orders.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -35,6 +37,8 @@ const routes: Routes = [
     path: 'showComplaints',
     component: ShowComplaintComponent,
   },
+  { path: 'order/:userId', component: OrdersComponent },
+  { path: 'allOrders', component: ListOrdersComponent  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }, // Handle 404
 ];

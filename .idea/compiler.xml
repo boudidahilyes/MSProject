@@ -16,9 +16,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
+        <module name="maven-archiver" />
         <module name="password" />
         <module name="ConfigServer" />
-        <module name="maven-archiver (1)" />
+        <module name="User" />
       </profile>
       <profile name="Annotation profile for Product" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -32,17 +33,7 @@
         <module name="Category" />
         <module name="Cart" />
       </profile>
-      <profile name="Annotation profile for Gateway" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="Gateway" />
-      </profile>
-      <profile name="Annotation profile for User" enabled="true">
+      <profile name="Annotation profile for tacking-system" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -50,13 +41,14 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="Ticket" />
-        <module name="User" />
         <module name="Review" />
         <module name="tacking-system" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maven-archiver" target="1.5" />
+      <module name="Gateway" target="1.8" />
+      <module name="maven-archiver (1)" target="1.5" />
       <module name="maven-archiver (2)" target="1.5" />
     </bytecodeTargetLevel>
   </component>
@@ -73,6 +65,7 @@
       <module name="Review" options="-parameters" />
       <module name="Ticket" options="-parameters" />
       <module name="User" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="password" options="-parameters" />
       <module name="tacking-system" options="-parameters" />
     </option>

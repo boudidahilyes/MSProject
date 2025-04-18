@@ -1,0 +1,141 @@
+<!--====== Start Orders Section ======-->
+<section class="contact-form-section gray-bg pt-80 pb-80">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-8 mx-auto">
+
+                <div class="payment-form">
+                    <div class="section-title mb-40">
+                        <span class="sub-title">Order Form</span>
+                        <h3>Place Your Order</h3>
+                    </div>
+
+                    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="fullName" formControlName="fullName" placeholder="John Doe" />
+                            </div>
+                            <div *ngIf="orderForm.get('fullName')?.invalid && orderForm.get('fullName')?.touched"
+                                class="error-message">
+                                Full name is required.
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" formControlName="email"
+                                    placeholder="example@email.com" />
+                            </div>
+                            <div *ngIf="orderForm.get('email')?.invalid && orderForm.get('email')?.touched"
+                                class="error-message">
+                                Valid email is required.
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="text" id="phoneNumber" formControlName="phoneNumber"
+                                    placeholder="+123456789" />
+                            </div>
+                            <div *ngIf="orderForm.get('phoneNumber')?.invalid && orderForm.get('phoneNumber')?.touched"
+                                class="error-message">
+                                Phone number is required.
+                            </div>
+                        </div>
+
+                        <!-- Zip Code -->
+                        <div class="form-group">
+                            <label for="zipCode">Zip Code</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-map-pin"></i>
+                                <input type="text" id="zipCode" formControlName="zipCode" placeholder="10001" />
+                            </div>
+                            <div *ngIf="orderForm.get('zipCode')?.invalid && orderForm.get('zipCode')?.touched"
+                                class="error-message">
+                                Zip code must be numeric.
+                            </div>
+                        </div>
+
+                        <!-- Street -->
+                        <div class="form-group">
+                            <label for="street">Street Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-road"></i>
+                                <input type="text" id="street" formControlName="street" placeholder="123 Main Street" />
+                            </div>
+                            <div *ngIf="orderForm.get('street')?.invalid && orderForm.get('street')?.touched"
+                                class="error-message">
+                                Street address is required.
+                            </div>
+                        </div>
+
+                        <!-- City -->
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-city"></i>
+                                <input type="text" id="city" formControlName="city" placeholder="New York" />
+                            </div>
+                            <div *ngIf="orderForm.get('city')?.invalid && orderForm.get('city')?.touched"
+                                class="error-message">
+                                City is required.
+                            </div>
+                        </div>
+
+                        <!-- Cart ID -->
+                        <div class="form-group">
+                            <label for="cartId">Cart ID</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                <input type="text" id="cartId" formControlName="cartId" placeholder="1234" />
+                            </div>
+                            <div *ngIf="orderForm.get('cartId')?.invalid && orderForm.get('cartId')?.touched"
+                                class="error-message">
+                                Cart ID must be numeric.
+                            </div>
+                        </div>
+
+                        <!-- Total Price -->
+                        <div class="form-group">
+                            <label for="totalPrice">Total Price</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                                <input type="number" id="totalPrice" formControlName="totalPrice"
+                                    placeholder="100.00" />
+                            </div>
+                            <div *ngIf="orderForm.get('totalPrice')?.invalid && orderForm.get('totalPrice')?.touched"
+                                class="error-message">
+                                Enter a valid amount.
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="text-center mt-3">
+                            <button class="main-btn primary-btn" type="submit" [disabled]="orderForm.invalid">
+                                {{ isEditing ? 'Update Order' : 'Submit Order' }}
+                                <i class="fa fa-paper-plane ml-2"></i>
+                            </button>
+                            <button class="main-btn secondary-btn ml-3" type="button" (click)="resetForm()">
+                                Reset
+                                <i class="fa fa-undo ml-2"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== End Orders Section ======-->

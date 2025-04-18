@@ -95,6 +95,7 @@ public class AuthenticationService {
                 user.getFirstName(),
                 user.getLastName(),
                 user.getEmail(),
+                user.getUserId(),
                 user.getRoles()
         );
     }

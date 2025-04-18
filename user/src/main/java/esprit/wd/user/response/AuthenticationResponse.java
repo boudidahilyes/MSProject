@@ -10,6 +10,7 @@ public record AuthenticationResponse(
         String firstname,
         String lastname,
         String email,
+        String userId,
         ArrayList<Role> roles
 ) {
 }
