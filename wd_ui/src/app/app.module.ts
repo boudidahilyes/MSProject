@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -18,10 +17,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDividerModule } from '@angular/material/divider';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
+import { CategoryFormComponent } from './product/pages/category-form/category-form.component';
+import { CategoryListComponent } from './product/pages/category-list/category-list.component';
+import { CreateProductComponent } from './product/pages/create-product/create-product.component';
+import { ProductListComponent } from './product/pages/product-list/product-list.component';
+import { UpdateProductComponent } from './product/pages/update-product/update-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent,RegisterComponent, ForgotPasswordComponent, ResetPasswordComponent],
+  declarations: [AppComponent, LoginComponent,RegisterComponent, ForgotPasswordComponent, ResetPasswordComponent,
+    CategoryFormComponent, CategoryListComponent, CreateProductComponent, ProductListComponent, UpdateProductComponent
+  ],
   imports: [BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
@@ -31,8 +38,7 @@ import { ResetPasswordComponent } from './user/reset-password/reset-password.com
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatDividerModule,
-    
-    // Angular Material Modules
+    FormsModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule],

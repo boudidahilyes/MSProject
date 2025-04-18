@@ -1,0 +1,68 @@
+<!-- category-list.component.html -->
+<div class="list-container">
+  <div class="list-header">
+    <h2>Category List</h2>
+    <div class="actions">
+      
+      <button 
+        (click)="Router.navigate(['/categories/create'])"
+        class="add-button"
+      >
+        Add New Category
+      </button>
+    </div>
+  </div>
+
+  <div class="loading-spinner" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <p>Loading categories...</p>
+  </div>
+
+  <div *ngIf="!isLoading">
+    <div *ngIf="categories.length === 0" class="no-results">
+      <p>No categories found</p>
+    </div>
+
+    <div *ngIf="categories.length > 0">
+      <div class="table-container">
+        <table class="category-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let category of categories">
+              <td>{{ category.id }}</td>
+              <td>{{ category.name }}</td>
+              <td>{{ category.description }}</td>
+              <td class="actions-cell">
+                
+                <button 
+                  (click)="deleteCategory(category.id)"
+                  class="delete-button"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div *ngIf="totalPages > 1" class="pagination">
+        <button 
+          *ngFor="let page of paginationArray" 
+          (click)="onPageChange(page)"
+          [class.active]="page === currentPage"
+          class="page-button"
+        >
+          {{ page }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
