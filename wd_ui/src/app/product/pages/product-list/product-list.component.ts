@@ -4,8 +4,8 @@ import { CategoryService } from '../../services/category.service';
 import { Category } from '../../models/category';
 import { ProductDTO } from '../../models/productdto';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/service/cart/cart.service';
-import { Cart } from 'src/app/models/cart.model';
+import { CartService } from 'src/app/cart/service/cart.service';
+import { Cart } from 'src/app/cart/models/cart';
 
 @Component({
   selector: 'app-product-list',

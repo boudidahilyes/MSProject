@@ -6,17 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="170073b8-cf31-478b-878c-ffb45082d066" name="Changes" comment="cart front">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/repository/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/service/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Product/src/main/java/com/msproject/product/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Product/src/main/java/com/msproject/product/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/models/cart.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/models/cart.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/header/header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/models/cart.model.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/product/pages/product-list/product-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/service/cart/cart.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/service/cart/cart.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/service/cart/cart.service.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,26 +22,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "boudidahilyes"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;boudidahilyes&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/boudidahilyes/MSProject.git",
-    "accountId": "b1922c07-7345-40df-a73b-94de504387fe"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/boudidahilyes/MSProject.git&quot;,
+    &quot;accountId&quot;: &quot;b1922c07-7345-40df-a73b-94de504387fe&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2vt0D620eeDOZhVL7SpRLf1JqKh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -62,6 +58,7 @@
     "Spring Boot.CartApplication.executor": "Run",
     "Spring Boot.CategoryApplication.executor": "Run",
     "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.DiscountApplication.executor": "Run",
     "Spring Boot.EurekaServerApplication.executor": "Run",
     "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.ProductApplication.executor": "Run",
@@ -76,6 +73,9 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -202,7 +202,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744948942806</updated>
-      <workItem from="1744948944527" duration="3020000" />
+      <workItem from="1744948944527" duration="3232000" />
+      <workItem from="1744952785605" duration="707000" />
     </task>
     <task id="LOCAL-00001" summary="merge with product">
       <option name="closed" value="true" />
@@ -212,7 +213,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744948998278</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cart front">
+      <option name="closed" value="true" />
+      <created>1744951980167</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744951980167</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cart front">
+      <option name="closed" value="true" />
+      <created>1744952822204</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744952822205</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,7 +16,7 @@ import { CategoryListComponent } from './product/pages/category-list/category-li
 import { CreateProductComponent } from './product/pages/create-product/create-product.component';
 import { ProductListComponent } from './product/pages/product-list/product-list.component';
 import { UpdateProductComponent } from './product/pages/update-product/update-product.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './cart/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
