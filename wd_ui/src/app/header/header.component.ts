@@ -9,9 +9,9 @@ import { CartService } from '../service/cart/cart.service';
 })
 export class HeaderComponent implements OnInit {
   cartItems: any[] = []; // Initialize as an empty array
-  userId = 'userId1'; 
+  userId = 'userId1';
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.loadCart();
@@ -25,26 +25,27 @@ export class HeaderComponent implements OnInit {
 
   increaseQuantity(index: number): void {
     const item = this.cartItems[index];
-    const updatedItem = { ...item, quantity: item.quantity + 1 };
-    this.cartService.updateCart(item.id, updatedItem).subscribe(() => {
+    this.cartService.updateCart(item.id, this.userId, item.quantity + 1).subscribe(() => {
       this.loadCart();
     });
   }
 
   decreaseQuantity(index: number): void {
     const item = this.cartItems[index];
+    if (item.quantity == 1) {
+      this.removeItem(item.id);
+    }
     if (item.quantity > 1) {
-      const updatedItem = { ...item, quantity: item.quantity - 1 };
-      this.cartService.updateCart(item.id, updatedItem).subscribe(() => {
+      this.cartService.updateCart(item.id, this.userId, item.quantity - 1).subscribe(() => {
         this.loadCart();
       });
-    } else {
-      this.removeItem(item.id!);
     }
   }
 
-  removeItem(cartId: number): void {
-    this.cartService.deleteCart(cartId).subscribe(() => {
+  removeItem(productId: number): void {
+    this.cartItems = this.cartItems.filter(item => item.id !== productId);
+    console.log(this.cartItems) 
+    this.cartService.deleteCart(productId, this.userId).subscribe(() => {
       this.loadCart();
     });
   }

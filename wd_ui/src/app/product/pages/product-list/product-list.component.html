@@ -33,7 +33,7 @@
         <div class="product-header">
           <h3>
             {{ product.name }}
-            <span class="cart-icon">🛒</span>
+            <span class="cart-icon" (click)="addToCart(product.id)">🛒</span>
           </h3>
           <span class="price-tag">${{ product.price }}</span>
         </div>

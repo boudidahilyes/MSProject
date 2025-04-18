@@ -11,19 +11,27 @@ export class CartService {
 
   constructor(private http: HttpClient) {}
 
-  addCart(cart: Cart): Observable<Cart> {
-    return this.http.post<Cart>(`${this.baseUrl}/add`, cart);
-  }
+// Add a cart item
+addCart(cart: Cart): Observable<Cart> {
+  return this.http.post<Cart>(`${this.baseUrl}/add`, cart);
+}
 
-  getCart(userId: string): Observable<Cart[]> {
-    return this.http.get<Cart[]>(`${this.baseUrl}/${userId}`);
-  }
+// Get cart items for a user
+getCart(userId: string): Observable<Cart[]> {
+  return this.http.get<Cart[]>(`${this.baseUrl}/${userId}`);
+}
 
-  deleteCart(cartId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${cartId}`);
-  }
+// Delete a cart item by productId and userId
+deleteCart(productId: number, userId: string): Observable<any> {
+  return this.http.delete(`${this.baseUrl}/${productId}`, {
+    params: { userId },
+  });
+}
 
-  updateCart(cartId: number, cart: Partial<Cart>): Observable<Cart> {
-    return this.http.put<Cart>(`${this.baseUrl}/${cartId}`, cart);
-  }
+// Update the quantity of a cart item
+updateCart(productId: number, userId: string, quantity: number): Observable<any> {
+  return this.http.put(`${this.baseUrl}/${productId}/${userId}`, null, {
+    params: { quantity: quantity.toString() },
+  });
+}
 }

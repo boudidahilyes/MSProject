@@ -30,7 +30,7 @@ public class CartService {
         List<Cart> carts = cartRepository.findAllByUserId(userId);
         List<ProductResponse> products = new ArrayList<>();
         for (Cart cart : carts) {
-            Product product=productClient.getProductById(cart.getId());
+            Product product=productClient.getProductById(cart.getProductId());
             ProductResponse productResponse = new ProductResponse();
             productResponse.setId(product.getId());
             productResponse.setName(product.getName());
@@ -41,14 +41,14 @@ public class CartService {
         return products;
     }
 
-    public Cart updateCart(Long id, CartRequest cartRequest) {
-        Cart cart = cartRepository.findById(id).orElse(null);
-        cart.setQuantity(cartRequest.getQuantity());
+    public Cart updateCart(int productId, String userId , int quantity) {
+        Cart cart = cartRepository.findByUserIdAndProductId(userId,productId);
+        cart.setQuantity(quantity);
         return cartRepository.save(cart);
     }
 
-    public void deleteCart(Long cartId) {
-        Cart cart = cartRepository.findById(cartId).orElse(null);
+    public void deleteCart(int productId , String userId) {
+        Cart cart = cartRepository.findByUserIdAndProductId(userId,productId);
         cartRepository.delete(cart);
     }
 }

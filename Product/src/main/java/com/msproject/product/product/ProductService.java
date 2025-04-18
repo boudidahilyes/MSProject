@@ -19,7 +19,7 @@ public class ProductService {
         return productRepository.save(product);
     }
     public ProductDTO getProductById(int id) {
-        Product product = productRepository.findById(id).get();
+        Product product = productRepository.findById(id).orElse(null);
         Category category = categoryClient.getCategoryById(product.getIdCategory());
         return new ProductDTO(
                 product.getId(),

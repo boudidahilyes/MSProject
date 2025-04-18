@@ -25,14 +25,14 @@ public class CartController {
         return ResponseEntity.ok(cartService.getCartOfAUser(userId));
     }
 
-    @DeleteMapping("/{cartId}")
-    public ResponseEntity<?> deleteCart(@PathVariable Long cartId) {
-        cartService.deleteCart(cartId);
+    @DeleteMapping("/{productId}")
+    public ResponseEntity<?> deleteCart(@PathVariable int productId,@RequestParam String userId) {
+        cartService.deleteCart(productId,userId);
         return ResponseEntity.ok("Deleted Successfully");
     }
 
-    @PutMapping("/{cartId}")
-    public ResponseEntity<?> updateCart(@PathVariable Long cartId, @RequestBody CartRequest cartRequest) {
-        return ResponseEntity.ok(cartService.updateCart(cartId, cartRequest));
+    @PutMapping("/{productId}/{userId}")
+    public ResponseEntity<?> updateCart(@PathVariable int productId, @PathVariable String userId , @RequestParam int quantity) {
+        return ResponseEntity.ok(cartService.updateCart(productId, userId,quantity));
     }
 }

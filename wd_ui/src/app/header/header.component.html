@@ -32,7 +32,7 @@
               <button mat-icon-button (click)="increaseQuantity(i); $event.stopPropagation()" aria-label="Increase Quantity">
                 <mat-icon>add</mat-icon>
               </button>
-              <button mat-icon-button (click)="removeItem(i); $event.stopPropagation()" aria-label="Remove Item">
+              <button mat-icon-button (click)="removeItem(item.id); $event.stopPropagation()" aria-label="Remove Item">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>

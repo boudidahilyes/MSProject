@@ -4,6 +4,8 @@ import { CategoryService } from '../../services/category.service';
 import { Category } from '../../models/category';
 import { ProductDTO } from '../../models/productdto';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/service/cart/cart.service';
+import { Cart } from 'src/app/models/cart.model';
 
 @Component({
   selector: 'app-product-list',
@@ -26,8 +28,9 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(data => {
@@ -71,5 +74,14 @@ export class ProductListComponent implements OnInit {
   goToCreate(): void {
     this.router.navigate(['/products/create']);
   }
-  
+
+  addToCart(id: number): void {
+    let cart = new Cart();
+    cart.productId = id;
+    cart.userId = 'userId1';
+    cart.quantity = 1;
+    this.cartService.addCart(cart).subscribe(() => {
+      alert('Product added to cart successfully!');
+    });
+}
 }
