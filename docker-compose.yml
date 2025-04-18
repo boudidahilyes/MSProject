@@ -1,0 +1,149 @@
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: omar
+      MONGO_INITDB_ROOT_PASSWORD: omar
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+
+  discovery:
+    build: ./discovery
+    image: discovery:1.0
+    container_name: discovery
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_SERVER_URL=http://discovery:8082/eureka/
+
+  config-server:
+    build: ./config-server
+    image: config-server:1.0
+    container_name: config-server
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery
+    restart: unless-stopped
+
+  gateway:
+    build: ./gateway
+    image: gateway:1.0
+    container_name: gateway
+    ports:
+      - "8888:8888"
+    depends_on:
+      - discovery
+      - config-server
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8082/eureka/
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8081
+
+  user:
+    build: ./user
+    image: user:1.0
+    container_name: user
+    ports:
+      - "9001:9001"
+    depends_on:
+      - mongo
+      - kafka
+      - zipkin
+      - discovery
+      - config-server
+      - gateway
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8082/eureka/
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8081
+
+volumes:
+  mongo_data:
+
+
+
+
+#
+#services:
+#
+#  mongo:
+#    image: mongo
+#    container_name: mongo
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: omar
+#      MONGO_INITDB_ROOT_PASSWORD: omar
+#    ports:
+#      - "27018:27017"
+#    volumes:
+#      - mongo_data:/data/db
+#    restart: unless-stopped
+#
+#
+#  kafka:
+#    image: apache/kafka:latest
+#    container_name: kafka
+#    ports:
+#      - "9092:9092"
+#
+#  zipkin:
+#    container_name: zipkin
+#    image: openzipkin/zipkin
+#    ports:
+#      - "9411:9411"
+#
+#  discovery:
+#    build: ./discovery
+#    image: discovery:1.0
+#    container_name: discovery
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8082/eureka
+#
+#  config-server:
+#    build: ./config-server
+#    image: config-server:1.0
+#    container_name: config-server
+#    ports:
+#      - "8888:8888"
+#    depends_on:
+#      - zipkin
+#    restart: unless-stopped
+#
+#  gateway:
+#    build: ./gateway
+#    image: gateway:1.0
+#    container_name: gateway
+#    ports:
+#      - "8888:8888"
+#    depends_on:
+#      - discovery
+#      - config-server
+#    environment:
+#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery:8082/eureka/
+#      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+#
+#
+#
+#
+#
+#
+#volumes:
+#    mongo_data:
+#

@@ -1,0 +1,24 @@
+scalar MapScalar
+
+type SuccessEventData {
+    eventId: ID!
+    eventType: String
+    timestamp: String
+    email: String
+    metadata: MapScalar
+}
+
+type FailureEventData {
+    eventId: ID!
+    eventType: String
+    timestamp: String
+    email: String
+    metadata: MapScalar
+}
+
+type Query {
+    getSuccessEvents: [SuccessEventData]
+    getSuccessEventsByEventType(eventType: String): [SuccessEventData]
+    getSuccessEventsByEmail(email: String): [SuccessEventData]
+    getFailureEvents: [FailureEventData]
+}
