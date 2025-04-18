@@ -5,226 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b5a752-cf49-4404-92e3-39ea8084e1e2" name="Changes" comment="merge complaint">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/dto/request/CartRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/entity/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/repository/CartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/service/CartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cart/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/cart.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/discount.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/DiscountApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/controller/DiscountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/dto/request/DiscountRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/dto/response/DiscountResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/entity/Discount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/repository/DiscountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/java/com/msproject/discount/service/DiscountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Discount/src/test/java/com/msproject/discount/DiscountApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/ComplaintApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/controller/ComplaintController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/controller/userController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/Complaint$ComplaintBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/Complaint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/ComplaintType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/StatusComplaint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/User$UserBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/exception/ComplaintNotFoundException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/exception/InvalidComplaintException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/exception/UserNotFoundException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/repository/ComplaintRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/repository/UserRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/service/AiService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/service/ComplaintService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/classes/com/msproject/complaint/service/UtilisService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/complaint-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/complaint-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/surefire-reports/TEST-com.msproject.complaint.ComplaintApplicationTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/surefire-reports/com.msproject.complaint.ComplaintApplicationTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaint/target/test-classes/com/msproject/complaint/ComplaintApplicationTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/ComplaintResponseApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/controller/ResponseController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ComplaintDto$ComplaintDtoBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ComplaintDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ResponseComplaint$ResponseComplaintBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/entity/ResponseComplaint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/exception/ComplaintNotFoundException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/exception/InvalidComplaintException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/exception/UserNotFoundException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/repository/ResponseRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/service/ComplaintService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/service/IResponseService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complaintResponse/target/classes/com/msproject/complaintresponse/service/ResponseService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/msproject/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/GatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/config/GatewayConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/exception/TokenMissingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/jwt/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/esprit/wd/gateway/jwt/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/test/java/com/msproject/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/PasswordApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/config/AsyncConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/controller/PasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/dto/UserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/exception/DataMismatchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/exception/EmailSendFailedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/model/PasswordResetToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/repository/PasswordResetTokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/request/ChangePasswordRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/request/ForgotPassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/service/PasswordResetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/user_client/FeignClientInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/java/esprit/wd/password/user_client/UserServiceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/password/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/TackingSystemApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/config/GraphQLConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/controller/AuditDataController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/graphql/MapScalar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/model/FailedType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/model/FailureEventData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/model/SuccessEventData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/repository/FailureEventDataRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/repository/SuccessEventDataRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/service/AuditDataService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/java/esprit/wd/tackingsystem/service/TrackingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/main/resources/graphql/schema.graphqls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tacking-system/src/test/java/esprit/wd/tackingsystem/TackingSystemApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/UserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/annotations/AuditEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/aspect/AuditAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/config/AsyncConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/config/KafkaTopicConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/controller/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/dto/FailedType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/dto/UserEventData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/dto/UserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/exception/DataMismatchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/exception/TokenExpiredException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/exception/TokenMissingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/exception/UserNameAlreadyExists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/filter/JitAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/model/KafkaEventType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/model/TokenBlackList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/repository/TokenBlackListRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/request/AuthenticationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/request/RefreshTokenRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/request/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/response/AuthenticationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/response/RefreshResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/response/UserResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/KafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/LogoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/TokenBlackListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/esprit/wd/user/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/service/user/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/register/register.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/register/register.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/register/register.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/app/user/register/register.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wd_ui/tsconfig.spec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/CartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/CartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cart/src/test/java/com/msproject/cart/CartApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/password/src/test/java/esprit/wd/password/PasswordApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/Discount/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Discount/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Discount/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/Discount/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/Discount/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/msproject/user/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/msproject/user/UserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/test/java/com/msproject/user/UserApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/test/java/com/msproject/user/UserApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,14 +16,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/boudidahilyes/MSProject.git",
+    "accountId": "2bf9abe4-eb0d-4a51-9372-fed7e736e183"
+  }
+}]]></component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="merge complaint">
+      <option name="closed" value="true" />
+      <created>1744935482422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744935482422</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
