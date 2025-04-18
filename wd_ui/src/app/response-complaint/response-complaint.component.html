@@ -1,0 +1,63 @@
+<section class="blog-details-section py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="text-primary">Complaints</h6>
+      <h2 class="fw-bold">Your Concerns, Our Commitment</h2>
+    </div>
+
+    <div class="card shadow-sm border-0 mb-4 p-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3 text-muted">
+          <span><i class="far fa-calendar-alt me-2"></i> {{ complaint?.createdAt | date }}</span>
+          <span class="badge bg-secondary">{{ complaint?.complaintType }}</span>
+        </div>
+
+        <h4 class="fw-semibold mb-4">{{ complaint.title }}</h4>
+        <hr>
+
+        <!-- Comment Section -->
+        <div class="comments-area mb-5">
+          <h5 class="mb-4 text-primary">Popular Comments</h5>
+          <ul class="list-unstyled">
+            <li *ngFor="let i of responses" class="mb-4">
+              <div class="d-flex align-items-start">
+                <img
+                  [src]="complaint?.userId === i.responderId ? '../../../assets/images/blog/comment-2.jpg' : '../../../assets/images/blog/comment-1.jpg'"
+                  alt="avatar" class=" rounded-circle me-3 comment-img" width="50" height="50">
+                <div>
+                  <p class="mb-0">{{ i.responseDescription }}</p>
+                  <h6 class="mb-1 text-dark fw-bold">
+                    {{ complaint?.userId === i.responderId ? 'Latifa Ben zaied' : 'Admin' }}
+                    <small class="text-muted fw-normal"> — {{ i.createdAt | date }}</small>
+                  </h6>
+
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="comments-respond">
+          <h5 class="mb-3 text-success">Leave a Response</h5>
+          <p class="mb-3">Send us your valuable feedback about our services</p>
+
+          <form [formGroup]="responseForm" (ngSubmit)="saveResponse()" [ngClass]="{'disabled-form': complaint.complaintStatus === 'RESOLVED'}">
+            <div class="mb-3">
+              <textarea formControlName="responseDescription" class="form-control shadow-sm" rows="4" placeholder="Write your response here..."></textarea>
+              <div *ngIf="responseForm.get('responseDescription')?.invalid && responseForm.get('responseDescription')?.touched" class="text-danger mt-1">
+                This field is required.
+              </div>
+              <div *ngIf="complaint.complaintStatus === 'RESOLVED'" class="text-danger mt-2">
+                You cannot submit a response because the status is 'Resolved'.
+              </div>
+            </div>
+
+            <button type="submit" class="main-btn px-4" [disabled]="complaint.complaintStatus === 'RESOLVED' || responseForm.invalid">
+              Submit Response
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,28 +1,42 @@
 <div class="login-container">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-      <h2>Login</h2>
-      <mat-form-field appearance="fill">
-        <mat-label>Username</mat-label>
-        <input matInput formControlName="username" required>
-        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
-          Username is required
-        </mat-error>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" required>
-        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-          Password is required
-        </mat-error>
-      </mat-form-field>
-  
-      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
-        Login
+  <div class="login-card">
+    <h2>Login</h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          formControlName="email"
+          placeholder="Enter your email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          formControlName="password"
+          placeholder="Enter your password">
+      </div>
+
+      <button 
+        type="submit" 
+        class="login-btn"
+        [disabled]="loginForm.invalid || loading">
+        {{ loading ? 'Logging in...' : 'Login' }}
       </button>
-  
+
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
     </form>
+    <div class="back-to-login">
+      <a routerLink="/forgot">forgot password -></a>
+    </div>
+    <div class="login-link">
+      dont have an account? <a routerLink="/register">Register</a>
+    </div>
   </div>
+</div>

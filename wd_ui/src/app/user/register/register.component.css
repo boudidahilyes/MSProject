@@ -1,0 +1,91 @@
+/* Reuse the same styles as login with small additions */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+  }
+  
+  .login-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  h2 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .error-text {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+  }
+  
+  .login-btn:hover {
+    background: #0069d9;
+  }
+  
+  .login-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #000;
+  }
+  
+  .login-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }

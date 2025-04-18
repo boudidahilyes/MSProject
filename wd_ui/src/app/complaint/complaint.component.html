@@ -1,0 +1,81 @@
+<app-popup
+  [title]="popupTitle"
+  [message]="popupMessage"
+  [showPopup]="showPopup"
+  (close)="onPopupClose()">
+</app-popup>
+<form class="contact-form" [formGroup]="complaintForm" (ngSubmit)="saveComplaint()">
+  <div *ngIf="isLoading" class="loader-overlay">
+    <div class="loader"></div>
+  </div>
+  <div class="form_group position-relative">
+    <label>Title</label>
+    <div class="d-flex align-items-center title-input-group">
+      <input
+        type="text"
+        class="form_control"
+        placeholder="Enter your title"
+        formControlName="title"
+        style="border-top-right-radius: 0; border-bottom-right-radius: 0;"
+      />
+      <button
+        type="button"
+        class="icon-btn"
+        (click)="generateTitle()"
+        title="Generate Title"
+        [disabled]="loading"
+      >
+        <i *ngIf="!loading" class="fas fa-magic"></i>
+        <i *ngIf="loading" class="fas fa-spinner fa-spin"></i>
+      </button>
+    </div>
+
+    <div *ngIf="complaintForm.get('title')?.invalid && complaintForm.get('title')?.touched" class="error-message">
+      <i class="fa fa-exclamation-circle"></i>
+      <small *ngIf="complaintForm.get('title')?.errors?.['required']">Title is required.</small>
+      <small *ngIf="complaintForm.get('title')?.errors?.['minlength']">Minimum 5 characters required.</small>
+      <small *ngIf="complaintForm.get('title')?.errors?.['maxlength']">Maximum 100 characters allowed.</small>
+    </div>
+  </div>
+
+  <!-- COMPLAINT TYPE -->
+  <div class="form_group">
+    <label>Complaint Type</label>
+    <select class="wide" formControlName="complaintType">
+      <option value="">-- Select a type --</option>
+      <option *ngFor="let option of complaintTypes" [value]="option.value">
+        {{ option.label }}
+      </option>
+    </select>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="form_group">
+    <label>Description</label>
+    <textarea
+      class="form_control"
+      placeholder="Write Message"
+      rows="6"
+      formControlName="complaintDescription"
+    ></textarea>
+    <div
+      *ngIf="
+        complaintForm.get('complaintDescription')?.invalid &&
+        complaintForm.get('complaintDescription')?.touched
+      "
+      class="error-message"
+    >
+      <i class="fa fa-exclamation-circle"></i>
+      <small *ngIf="complaintForm.get('complaintDescription')?.errors?.['required']">Description is required.</small>
+      <small *ngIf="complaintForm.get('complaintDescription')?.errors?.['minlength']">Minimum 5 characters required.</small>
+      <small *ngIf="complaintForm.get('complaintDescription')?.errors?.['maxlength']">Maximum 500 characters allowed.</small>
+    </div>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <div class="form_group">
+    <button class="main-btn primary-btn" type="submit" [disabled]="complaintForm.invalid">
+      Send <i class="fa fa-arrow-right"></i>
+    </button>
+  </div>
+</form>

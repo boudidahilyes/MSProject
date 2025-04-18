@@ -1,0 +1,86 @@
+/* Container for the form */
+.create-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Title of the form */
+.form-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* The form element */
+.product-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Grouping the form elements */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+.form-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Input fields styling */
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+  transition: border 0.3s ease;
+}
+
+/* Styling for form elements when focused */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Prevent textarea from resizing */
+.form-textarea {
+  resize: vertical;
+}
+
+/* Submit button styling */
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 30px;
+  transition: background-color 0.3s
+}
