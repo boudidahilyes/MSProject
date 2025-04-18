@@ -36,12 +36,13 @@ public class OrderController {
         return ResponseEntity.ok(orders);
     }
 
-    @PostMapping("{totalAmount}")
+    @PostMapping("{cartId}")
     public ResponseEntity<Orders> createOrder(
             @RequestBody Orders payload,
-            @PathVariable double totalAmount
+            @PathVariable int cartId,
+            @RequestParam double totalAmount
     ) {
-        return ResponseEntity.ok(orderService.createOrder(totalAmount,payload));
+        return ResponseEntity.ok(orderService.createOrder(cartId,totalAmount,payload));
     }
 
 //    @PostMapping("/confirm-payment-and-create-order")

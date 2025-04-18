@@ -41,7 +41,11 @@ public class OrderService {
         orderRespository.save(order);
     }
 
-    public Orders createOrder(double totalPrice, Orders payload) {
+    public Orders createOrder(int cardtId ,double totalPrice, Orders payload) {
+        if (cardtId == 0 ){
+            throw  new RuntimeException("value cannot be null ");
+        }
+        System.out.println("the id of the cart = "+cardtId);
         Orders newOrder= Orders.builder()
                 .totalPrice(totalPrice)
                 .city(payload.getCity())
@@ -50,6 +54,7 @@ public class OrderService {
                 .zipCode(payload.getZipCode())
                 .phoneNumber(payload.getPhoneNumber())
                 .fullName(payload.getFullName())
+                .cartId(cardtId)
                 .build();
 
         return orderRespository.save(newOrder);

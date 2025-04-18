@@ -7,4 +7,3 @@ spring:
 stripe:
   public-key: ${public_key}
   secret-key: ${secret_key}
-

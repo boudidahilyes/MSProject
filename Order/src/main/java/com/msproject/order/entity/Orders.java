@@ -43,6 +43,9 @@ public class Orders {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
+  @Column(nullable = false)
+  private int cartId;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
