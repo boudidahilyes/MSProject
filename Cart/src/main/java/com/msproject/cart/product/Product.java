@@ -1,4 +1,4 @@
-package com.msproject.product.category;
+package com.msproject.cart.product;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,8 +11,11 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-public class Category {
+public class Product {
     int id;
     String name;
     String description;
+    double price;
+    int idCategory;
+    int quantity;
 }

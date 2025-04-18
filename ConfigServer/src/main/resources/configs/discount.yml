@@ -8,6 +8,6 @@ spring:
     hibernate:
       ddl-auto: update
 server:
-  port: 9001
+  port: 8999
   servlet:
     context-path: /api/v1/

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2b0b302b-980d-42ab-99f2-88bca1692455" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/dto/response/ProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/product/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/product/ProductClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/java/com/msproject/gateway/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/CartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/CartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/repository/CartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Cart/src/main/java/com/msproject/cart/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/discount.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/discount.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConfigServer/src/main/resources/configs/eurekaServer.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Product/src/main/java/com/msproject/product/category/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/Product/src/main/java/com/msproject/product/category/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Product/src/main/java/com/msproject/product/category/CategoryClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Product/src/main/java/com/msproject/product/category/CategoryClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/app/user/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/app/user/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wd_ui/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/wd_ui/src/styles.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "boudidahilyes"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/boudidahilyes/MSProject.git",
+    "accountId": "b1922c07-7345-40df-a73b-94de504387fe"
+  }
+}]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2vsh62NAHKgruTACUgozESQupev" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.CartApplication.executor": "Run",
+    "Spring Boot.CategoryApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.DiscountApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.ProductApplication.executor": "Run",
+    "git-widget-placeholder": "cart__branch",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CartApplication">
+    <configuration name="CartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Cart" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.cart.CartApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Category" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="msproject.category.CategoryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ConfigServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscountApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Discount" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.discount.DiscountApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EurekaServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.order.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PasswordApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="password" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="esprit.wd.password.PasswordApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.product.ProductApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Review" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.review.ReviewApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TackingSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="tacking-system" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="esprit.wd.tackingsystem.TackingSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TicketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Ticket" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.msproject.ticket.TicketApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.CartApplication" />
+      <item itemvalue="Spring Boot.CategoryApplication" />
+      <item itemvalue="Spring Boot.DiscountApplication" />
+      <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="Spring Boot.PasswordApplication" />
+      <item itemvalue="Spring Boot.ProductApplication" />
+      <item itemvalue="Spring Boot.ReviewApplication" />
+      <item itemvalue="Spring Boot.TackingSystemApplication" />
+      <item itemvalue="Spring Boot.TicketApplication" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b0b302b-980d-42ab-99f2-88bca1692455" name="Changes" comment="" />
+      <created>1744939512773</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744939512773</updated>
+      <workItem from="1744939514138" duration="7210000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

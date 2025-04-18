@@ -1,0 +1,81 @@
+<mat-toolbar class="toolbar" color="primary">
+  <!-- Logo -->
+  <div class="logo" routerLink="/">
+    <img src="assets/images/logo.png" alt="Logo" class="logo-image" />
+    <span class="logo-text">ShopEase</span>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="nav-links">
+    <button mat-button routerLink="/products" class="nav-link">Products</button>
+    <button mat-button routerLink="/complaints" class="nav-link">Complaints</button>
+  </div>
+
+  <span class="spacer"></span>
+
+  <!-- Cart Dropdown -->
+  <div class="cart-container">
+    <button mat-icon-button [matMenuTriggerFor]="cartMenu" aria-label="Cart">
+      <mat-icon>shopping_cart</mat-icon>
+      <span class="cart-badge" matBadge="{{ cartItems.length }}" matBadgeColor="warn"></span>
+    </button>
+    <mat-menu #cartMenu="matMenu" class="custom-dropdown" [overlapTrigger]="false" yPosition="below" xPosition="after">
+      <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+          <div class="cart-item-details">
+            <span class="cart-item-name"> {{ item.name }}</span>
+            <div class="cart-item-actions">
+              <button mat-icon-button (click)="decreaseQuantity(i); $event.stopPropagation()" aria-label="Decrease Quantity">
+                <mat-icon>remove</mat-icon>
+              </button>
+              <span class="cart-item-quantity">{{ item.quantity }}</span>
+              <button mat-icon-button (click)="increaseQuantity(i); $event.stopPropagation()" aria-label="Increase Quantity">
+                <mat-icon>add</mat-icon>
+              </button>
+              <button mat-icon-button (click)="removeItem(i); $event.stopPropagation()" aria-label="Remove Item">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+        </div>
+        <button mat-menu-item class="order-now-btn" (click)="orderNow()">
+          <mat-icon>shopping_bag</mat-icon>
+          <span>Order Now</span>
+        </button>
+      </ng-container>
+      <ng-template #emptyCart>
+        <div class="empty-cart">Your cart is empty</div>
+      </ng-template>
+    </mat-menu>
+  </div>
+
+  <!-- User Menu Dropdown -->
+  <div class="user-container">
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User Menu">
+      <img class="user-avatar" src="assets/images/user-avatar.png" alt="User Avatar" />
+    </button>
+    <mat-menu #userMenu="matMenu" class="custom-dropdown">
+      <div class="user-info">
+        <img class="user-avatar-large" src="assets/images/user-avatar.png" alt="User Avatar" />
+        <div class="user-details">
+          <span class="user-name">John Doe</span>
+          <span class="user-email">john.doe@example.com</span>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

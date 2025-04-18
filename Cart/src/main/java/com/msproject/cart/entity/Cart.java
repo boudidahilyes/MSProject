@@ -19,9 +19,9 @@ import java.time.LocalDateTime;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String userId;
-    private Long productId;
+    private int productId;
     private int quantity;
     @CreatedDate
     private LocalDateTime added_at;

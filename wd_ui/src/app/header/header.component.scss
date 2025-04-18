@@ -1,0 +1,121 @@
+@use '@angular/material' as mat;
+
+.toolbar {
+  background-color: #3f51b5; // Material Indigo
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.cart-container {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.cart-item {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-name {
+  font-weight: bold;
+}
+
+.cart-item-quantity {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.empty-cart {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+}
+
+.order-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.custom-dropdown {
+  min-width: 300px;
+}
+.cart-container {
+  position: relative;
+}
+
+.custom-dropdown {
+  min-width: 300px;
+  margin-top: 8px; // Adds a small gap between the cart icon and the dropdown
+}
